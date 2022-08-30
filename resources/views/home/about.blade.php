@@ -19,4 +19,12 @@
           class="fa-solid fa-right-long"></i></a>
     </div>
   </div>
+  <div class="row justify-content-center my-5">
+    <div class="col-md-6 bg-primary text-light p-5 rounded shadow-lg">
+      <h2 class="text-center">Get all your sneakers here!</h2>
+      <p class="fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse in est ante in nibh mauris cursus.</p>
+      <a href="#" class="btn btn-outline-light">Explore<i
+          class="fa-solid fa-right-long"></i></a>
+    </div>
+  </div>
 @endsection
