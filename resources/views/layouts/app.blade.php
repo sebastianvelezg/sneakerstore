@@ -52,16 +52,32 @@
             @yield('content')
         </div>
         <!-- footer -->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container">
-                <small>
-                    Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank"
-                    href="https://instagram.com/sebastianvelezg">
-                    Sebastian Velez
-                    </a>
-                </small>
-            </div>
+
+    <footer class="bg-dark text-center text-white absolute-bottom">
+        <div class="container p-4">
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fas fa-fw fa-facebook"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <section class="mb-4">
+                <p>
+                @lang('description')
+                </p>
+            </section>
         </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2022 Copyright:
+      <div class="d-flex flex-column">
+        <a class="text-white" href="https://mdbootstrap.com/">Juan Esteban Cardona</a>
+        <a class="text-white" href="https://mdbootstrap.com/">Sebastian Velez</a>
+      </div>
+    </div>
+    <!-- Copyright -->
+  </footer>
         <!-- footer -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
         </script>
