@@ -14,10 +14,12 @@ return new class extends Migration
             $table->string("name");
             $table->string("colorway");
             $table->string("brand");
-            $table->text("description");
+            $table->string("description");
             $table->string("releasedate");
             $table->float("retailprice");
             $table->float("price");
+            $table->unsignedBigInteger('id_category');
+            $table->foreign('id_category')->references('id')->on('categories');
             $table->timestamps();
         });
     }

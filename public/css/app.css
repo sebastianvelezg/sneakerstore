@@ -1,13 +1,17 @@
 .bg-secondary {
-    background-color: #171717 !important;
+    background-color: #eeeeee !important;
 }
 
-.copyright {
+.bg-third {
     background-color: #444444;
 }
 
 .bg-primary {
-    background-color: #da0037 !important;
+    background-color: #d72323 !important;
+}
+
+.bg-fourth {
+    background-color: #eeeeee !important;
 }
 
 nav {

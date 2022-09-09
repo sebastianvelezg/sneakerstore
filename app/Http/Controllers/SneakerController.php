@@ -4,65 +4,145 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sneaker;
+use App\Models\Category;
+use Illuminate\Support\Facades\File;
 
 class SneakerController extends Controller
 {
-    public function indexAdmin()
+    public function index($id)
     {
-        $sneakers = Sneaker::all();
-        return view('sneakers.indexAdmin')->with('sneakers', $sneakers);
+        $viewData = [];
+        $viewData["title"] = "Name Sneaker - Sneaker";
+        $viewData["subTitle"] = "Name of Sneaker";
+        $viewData["sneaker"] = Sneaker::find($id);
+        $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
+        $viewData['images'] = File::files(public_path("image/sneakers/" . $viewData['sneaker']->getId()));
+        return view("sneaker.index")->with("viewData", $viewData);
+    }
+
+    public function adminIndex()
+    {
+        //$sneakers = Sneaker::all();
+        //return view('sneakers.indexAdmin')->with('sneakers', $sneakers);
+
+        $viewData = [];
+        $viewData['categories'] = Category::all();
+        return view('sneakers.indexAdmin')->with('viewData', $viewData);
+    }
+
+    // Return the especific admin sneaker page 
+    public function adminShow($id)
+    {
+        $viewData = [];
+        $viewData['category'] = Category::findOrFail($id);
+        $viewData['sneakers'] = Sneaker::where('id_category', $id)->get();
+        return view('sneakers.showAdmin')->with('viewData', $viewData);
     }
 
     public function create()
     {
-        return view('sneakers.create');
+        $viewData['category'] = Category::findOrFail($id);
+        return view('sneakers.create')->with('viewData'->$viewData);
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'colorway' => 'required|max:255',
-            'brand' => 'required|max:255',
-            'description' => 'required:max:6000',
-            'releasedate' => 'required|max:255',
-            'retailprice' => 'required',
-            'price' => 'required',
+        Sneaker::validate($request);
+        $filename = time() . $request->image->getClientOriginalName();
 
-        ]);
-        $show = Sneaker::create($validatedData);
-        return redirect(route('admin.sneaker', $request->idSneaker)); 
+        $data = [
+        "name" => $request->name,
+        "colorway" => $request->colorway,
+        "brand" => $request->brand,
+        "description" => $request->description,
+        "releasedate" => $request->releasedate,
+        "retailprice" => $request->retailprice,
+        "price" => $request->price,
+        "idCategory" => $request->idCategory
+        ];
+
+        $sneaker = Sneaker::create($data);
+        $sneaker->setImage($filename);
+        $sneaker->save();
+
+
+        $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
+
+        return redirect(route('admin.sneakersCategory', $request->idCategory));
     }
 
     public function show($id)
     {
-        $sneaker = Sneaker::find($id);
-        return view('sneakers.show')->with('sneakers', $sneaker);
+    $viewData = [];
+    $viewData['sneaker'] = Sneaker::findOrFail($id);
+    $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
+    $viewData['images'] = File::files(public_path("image/categories/" . $viewData['sneaker']->getId()));
+    return view('sneaker.showSneaker')->with('viewData', $viewData);
+    }
+
+    // Delete images of a sneaker
+    public function deleteImage($param)
+    {
+        $params = explode(" $- ", $param);
+        File::delete(public_path('image/sneakers/' . $params[0] . '/' . $params[1]));
+        return back();
+    }
+
+    public function addImages(Request $request, $id)
+    {
+        if ($request->hasfile('files')) {
+        foreach ($request->file('files') as $image) {
+            $filename = time() . $image->getClientOriginalName();
+            $image->move(public_path("image/sneakers/" . $id), $filename);
+            }
+        }
+        return back();
     }
 
     public function edit($id)
     {
-        $sneaker = Sneaker::find($id);
-        return view('sneakers.edit')->with('sneakers', $sneaker);
+        $viewData = [];
+        $viewData['sneaker'] = Sneaker::findOrFail($id);
+        $viewData['categories'] = Category::all();
+        return view('sneakers.edit')->with('viewData', $viewData);
     }
 
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'colorway' => 'required|max:255',
-            'brand' => 'required|max:255',
-            'description' => 'required:max:6000',
-            'releasedate' => 'required|max:255',
-            'retailprice' => 'required',
-            'price' => 'required',
-        ]);
+        Sneaker::validateUpdate($request);
+        $sneaker = Sneaker::find($id);
+        if (isset($request->image)) {
+        File::delete(public_path('image/sneakers/' . $sneaker->getId() . '/' . $sneaker->getImage()));
+        $filename = time() . $request->image->getClientOriginalName();
+        $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
+        $sneaker->setImage($filename);
+        }
+
+        $sneaker->setName($request->name);
+        $sneaker->setColorway($request->developer);
+        $sneaker->setBrand($request->description);
+        $sneaker->setDescription($request->description);
+        $sneaker->setReleasedate($request->releasedate);
+        $sneaker->setRetailrice($request->retailprice);
+        $sneaker->setPrice($request->price);        
+        $sneaker->setIdCategory($request->idCategory);
+
+        $sneaker->save();
+
+        return redirect(route('admin.sneakersCategory', $sneaker->getIdCategory()));
+
         Sneaker::whereId($id)->update($validatedData);
         return back();
     }
 
     public function destroy($id)
     {
+        $snekaer = sneaker::find($id);
+        $idCategory = $snekaer->getIdCategory();
+        File::deleteDirectory(public_path('image/sneakers/' . $snekaer->getId() . '/'));
+        $snekaer->delete();
+        return redirect(route('admin.sneakersCategory', $idCategory));
+        
         Sneaker::destroy($id);
         return redirect(route('admin.sneaker'));  
     }
