@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Dashboard')
 @section('content_header')
-<h1>Create Sneaker</h1>
+<h1>Create Sneaker {{ $viewData['category']->getName() }}</h1>
 @stop
 @section('content')
 <form action="{{ route('admin.sneakerStore') }}" enctype="multipart/form-data" method="POST">
@@ -91,8 +91,21 @@
       @enderror
     </div>
   </div>
-  <a href="{{ route('admin.sneaker') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
-  <button type="submit" class="btn bg-dark text-white">{{ __('Register') }}</button>
+  <div class="mb-3">
+    <label for="" class="form-label">Image</label>
+    <input id="image" name="image" type="file" class="" tabindex="3" />
+    @error('image')
+      <span class="invalid-feedback d-block" role="alert">
+        <strong>*{{ $message }}</strong>
+      </span>
+    @enderror
+  </div>
+  <div class="mb-3">
+    <input id="idCategory" name="idCategory" type="number" class="form-control" tabindex="3"
+      value="{{ $viewData['category']->getId() }}" style="visibility: hidden; height: 0" />
+  </div>
+  <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
+  <button type="submit" class="btn bg-dark text-white">Save</button>
 </form>
 @stop
 

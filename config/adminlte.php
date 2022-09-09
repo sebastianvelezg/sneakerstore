@@ -327,6 +327,11 @@ return [
             'icon'        => 'fas fa-fw fa-user',
         ],
         [
+            'text'        => 'Categories',
+            'url'         => 'admin/category',
+            'icon'        => 'fas fa-fw fa-folder',
+        ],
+        [
             'text'        => 'Brands',
             'url'         => 'admin/brand',
             'icon'        => 'fas fa-fw fa-folder',

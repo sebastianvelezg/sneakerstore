@@ -9,7 +9,37 @@ class Sneaker extends Model
 {
     protected $table = 'sneakers';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'colorway', 'brand', 'description', 'releasedate', 'retailprice', 'price'];
+    protected $fillable = ['name', 'colorway', 'brand', 'description', 'releasedate', 'retailprice', 'price','image', 'id_category'];
+
+    public static function validate($request)
+    {
+      $request->validate([
+        'name' => 'required|max:255',
+        'colorway' => 'required|max:255',
+        'brand' => 'required:max:6000',
+        'description' => 'required:number',
+        'releasedate' => 'required|max:255',
+        'retailprice' => 'required|max:2000',
+        'price' => 'required|max:2000',
+        'idCategory' => 'required:number',
+        'image' => 'required|image'
+      ]);
+    }
+
+    public static function validateUpdate($request)
+    {
+      $request->validate([
+        'name' => 'required|max:255',
+        'colorway' => 'required|max:255',
+        'brand' => 'required:max:6000',
+        'description' => 'required:number',
+        'releasedate' => 'required|max:255',
+        'retailprice' => 'required|max:2000',
+        'price' => 'required|max:2000',
+        'idCategory' => 'required:number',
+        'image' => 'required|image'
+      ]);
+    }
 
   public function getId()
   {
@@ -81,6 +111,24 @@ class Sneaker extends Model
   public function setPrice($price)
   {
     return $this->attributes['price'] = $price;
+  }
+
+  public function getIdCategory()
+  {
+    return $this->attributes['id_category'];
+  }
+  public function setIdCategory($id_category)
+  {
+    return $this->attributes['id_category'] = $id_category;
+  }
+
+  public function getImage()
+  {
+    return $this->attributes['image'];
+  }
+  public function setImage($image)
+  {
+    return $this->attributes['image'] = $image;
   }
 
   public function getCreateAt()
