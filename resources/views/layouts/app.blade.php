@@ -83,9 +83,11 @@
         <a class="text-white" href="https://mdbootstrap.com/">Sebastian Velez</a>
       </div>
     </div>
+c
   </footer>
   <!-- footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
   </body>
+
 </html>
