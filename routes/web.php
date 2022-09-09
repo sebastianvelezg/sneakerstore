@@ -35,8 +35,6 @@ Route::middleware('admin')->group(function () {
     //sneakers index
     Route::get("/admin/sneakers", 'App\Http\Controllers\SneakerController@adminIndex')->name("admin.sneaker");
     
-    // Admin sneaker page specific category
-    Route::get("/admin/sneaker/{id}", 'App\Http\Controllers\SneakerController@adminShow')->name("admin.sneakersCategory");
 
     // Admin create sneaker with page specific category
     Route::get("/admin/sneaker/create/{id}", 'App\Http\Controllers\SneakerController@create')->name("admin.sneakerCreate");
@@ -45,10 +43,13 @@ Route::middleware('admin')->group(function () {
     Route::post("/admin/sneaker/store", 'App\Http\Controllers\SneakerController@store')->name("admin.sneakerStore");
 
     //create sneaker
-    Route::get("/admin/sneakers/create", 'App\Http\Controllers\SneakerController@create')->name("admin.sneakerCreate");
+    //Route::get("/admin/sneakers/create", 'App\Http\Controllers\SneakerController@create')->name("admin.sneakerCreate1");
 
     //edit sneaker
     Route::get("/admin/sneakers/{id}/edit", 'App\Http\Controllers\SneakerController@edit')->name("admin.sneakerEdit");
+
+    // Admin sneaker page specific category
+    Route::get("/admin/sneaker/{id}", 'App\Http\Controllers\SneakerController@adminShow')->name("admin.sneakersCategory");
 
     //store sneaker
     Route::post("/admin/sneakers", 'App\Http\Controllers\SneakerController@store')->name("admin.sneakerStore");
@@ -107,3 +108,5 @@ Route::middleware('admin')->group(function () {
     // Delete category
     Route::get("/admin/category/delete/{id}", 'App\Http\Controllers\CategoryController@destroy')->name("admin.categoryDelete");
 });
+
+//////arregkar las rutas

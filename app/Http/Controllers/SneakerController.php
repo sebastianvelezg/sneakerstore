@@ -22,15 +22,12 @@ class SneakerController extends Controller
 
     public function adminIndex()
     {
-        //$sneakers = Sneaker::all();
-        //return view('sneakers.indexAdmin')->with('sneakers', $sneakers);
 
         $viewData = [];
         $viewData['categories'] = Category::all();
         return view('sneakers.indexAdmin')->with('viewData', $viewData);
     }
 
-    // Return the especific admin sneaker page 
     public function adminShow($id)
     {
         $viewData = [];
@@ -39,32 +36,45 @@ class SneakerController extends Controller
         return view('sneakers.showAdmin')->with('viewData', $viewData);
     }
 
-    public function create()
+    public function create($id)
     {
         $viewData['category'] = Category::findOrFail($id);
-        return view('sneakers.create')->with('viewData'->$viewData);
+        return view('sneakers.create')->with('viewData', $viewData);
     }
 
     public function store(Request $request)
     {
-        Sneaker::validate($request);
+        //Sneaker::validate($request);
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
         "name" => $request->name,
-        "colorway" => $request->colorway,
+        "colorway" => $request->colorway,c
         "brand" => $request->brand,
         "description" => $request->description,
         "releasedate" => $request->releasedate,
         "retailprice" => $request->retailprice,
         "price" => $request->price,
-        "idCategory" => $request->idCategory
+        "id_category" => $request->idCategory,
         ];
 
         $sneaker = Sneaker::create($data);
         $sneaker->setImage($filename);
         $sneaker->save();
 
+        // $sneaker = new Sneaker();
+        // $sneaker->setName($request->name);
+        // $sneaker->setColorway($request->colorway);
+        // $sneaker->setBrand($request->brand);
+        // $sneaker->setDescription($request->description);
+        // $sneaker->setReleasedate($request->releasedate);
+        // $sneaker->setRetailprice($request->retailprice);
+        // $sneaker->setPrice($request->price);
+        // $sneaker->setImage('no-image.png');
+        // $sneaker->setIdCategory($request->id_category);
+
+        // $sneaker->save();
+        //dd('hola');
 
         $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
 

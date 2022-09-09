@@ -101,7 +101,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <input id="idCategory" name="idCategory" type="number" class="form-control" tabindex="3"
+    <input id="id_category" name="id_category" type="number" class="form-control" tabindex="3"
       value="{{ $viewData['category']->getId() }}" style="visibility: hidden; height: 0" />
   </div>
   <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>

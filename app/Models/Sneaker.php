@@ -21,7 +21,7 @@ class Sneaker extends Model
         'releasedate' => 'required|max:255',
         'retailprice' => 'required|max:2000',
         'price' => 'required|max:2000',
-        'idCategory' => 'required:number',
+        'id_category' => 'required:number',
         'image' => 'required|image'
       ]);
     }
@@ -36,7 +36,7 @@ class Sneaker extends Model
         'releasedate' => 'required|max:255',
         'retailprice' => 'required|max:2000',
         'price' => 'required|max:2000',
-        'idCategory' => 'required:number',
+        'id_category' => 'required:number',
         'image' => 'required|image'
       ]);
     }
