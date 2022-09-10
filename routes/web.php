@@ -17,6 +17,8 @@ Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name
 // Category page
 Route::get('/category/{id}', 'App\Http\Controllers\CategoryController@show')->name('category.show');
 
+// Sneaker page
+Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->name('sneakers.index');
  
 
 Auth::routes();

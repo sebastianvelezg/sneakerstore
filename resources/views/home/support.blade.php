@@ -7,17 +7,17 @@
       <div class="col-md-5">
         <h1>Support</h1>
         <h2>Can we help you?</h2>
-        <p class="fs-3">you can write your problem, suggestion</p>
+        <p class="fs-3">You can write your problem, suggestion</p>
         <form class="form-floating">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
           <label for="floatingTextarea" style="color: #000;">What Do You Need?</label>
           <button class="btn btn-outline-light my-3">Send</button>
         </form>
-        <p class="fs-4">or us it is very important to know your opinions, we will contact you as soon as possible!</p>
+        <p class="fs-4">For us it is very important to know your opinions, we will contact you as soon as possible!</p>
       </div>
 
       <div class="col-md-5">
-        <img src="/images/dunk4.png" style="width: 100%; height: 50vh; object-fit:cover;" alt="">
+        <img src="/images/dunk4.png" style="width: 100%; height: 25vh; object-fit:cover;" alt="">
       </div>
     </div>
   </div>

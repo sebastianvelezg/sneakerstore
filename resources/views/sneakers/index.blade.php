@@ -59,17 +59,6 @@
               </p>
             </li>
           </ul>
-
-          <div class="card-body d-flex justify-content-evenly">
-            <a class="btn btn-outline-light" href="{{ route('cart.add', $viewData['sneaker']->getId()) }}">
-            Add To Cart
-              <i class="fa-solid fa-cart-arrow-down"></i>
-            </a>
-            <a href="{{ route('sneaker.buy', $viewData['sneaker']->getId()) }}" class="btn btn-outline-light">
-            Buy Now
-              <i class="fa-solid fa-money-bill"></i>
-            </a>
-          </div>
         </div>
         <div class="col-md-6">
           <img
