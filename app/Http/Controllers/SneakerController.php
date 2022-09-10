@@ -46,6 +46,7 @@ class SneakerController extends Controller
         Sneaker::validate($request);
 
         $filename = time() . $request->image->getClientOriginalName();
+
         $data = [
             "name" => $request->name,
             "colorway" => $request->colorway,
@@ -60,23 +61,7 @@ class SneakerController extends Controller
         $sneaker = Sneaker::create($data);
         $sneaker->setImage($filename);
         $sneaker->save();
-
-        // $sneaker = new Sneaker();
-        // $sneaker->setName($request->name);
-        // $sneaker->setColorway($request->colorway);
-        // $sneaker->setBrand($request->brand);
-        // $sneaker->setDescription($request->description);
-        // $sneaker->setReleasedate($request->releasedate);
-        // $sneaker->setRetailprice($request->retailprice);
-        // $sneaker->setPrice($request->price);
-        // $sneaker->setImage('no-image.png');
-        // $sneaker->setIdCategory($request->id_category);
-  
-        // $sneaker->save();
-        //dd('hola');
-
         $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
-
 
         return redirect(route('admin.sneakersCategory', $request->idCategory));
     }
@@ -86,7 +71,7 @@ class SneakerController extends Controller
         $viewData = [];
         $viewData['sneaker'] = Sneaker::findOrFail($id);
         $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
-        $viewData['images'] = File::files(public_path("image/categories/" . $viewData['sneaker']->getId()));
+        $viewData['images'] = File::files(public_path("image/category/" . $viewData['sneaker']->getId()));
         return view('sneaker.showSneaker')->with('viewData', $viewData);
     }
 
@@ -129,11 +114,11 @@ class SneakerController extends Controller
         }
 
         $sneaker->setName($request->name);
-        $sneaker->setColorway($request->developer);
-        $sneaker->setBrand($request->description);
+        $sneaker->setColorway($request->colorway);
+        $sneaker->setBrand($request->brand);
         $sneaker->setDescription($request->description);
         $sneaker->setReleasedate($request->releasedate);
-        $sneaker->setRetailrice($request->retailprice);
+        $sneaker->setRetailprice($request->retailprice);
         $sneaker->setPrice($request->price);
         $sneaker->setIdCategory($request->idCategory);
 
