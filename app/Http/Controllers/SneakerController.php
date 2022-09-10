@@ -44,18 +44,18 @@ class SneakerController extends Controller
 
     public function store(Request $request)
     {
-        //Sneaker::validate($request);
+        Sneaker::validate($request);
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
         "name" => $request->name,
-        "colorway" => $request->colorway,c
+        "colorway" => $request->colorway,
         "brand" => $request->brand,
         "description" => $request->description,
         "releasedate" => $request->releasedate,
         "retailprice" => $request->retailprice,
         "price" => $request->price,
-        "id_category" => $request->idCategory,
+        "id_category" => $request->id_category,
         ];
 
         $sneaker = Sneaker::create($data);
