@@ -1,9 +1,12 @@
-@extends('adminlte::page') @section('title', $viewData['title'])
+@extends('adminlte::page') 
+@section('title', $viewData['title'])
 @section('content_header')
   <h1>  Edit Categories</h1>
-  @stop @section('content')
-  <form action="{{ route('admin.categoryUpdate', $viewData['category']->getId()) }}" method="post"
-    enctype="multipart/form-data">
+  @stop 
+  @section('content')
+
+  <form action="{{ route('admin.categoryUpdate', $viewData['category']->getId()) }}" method="POST" enctype="multipart/form-data" 
+    >
     @csrf @method('PUT')
     <div class="mb-3">
       <label for="" class="form-label">  Name</label>
