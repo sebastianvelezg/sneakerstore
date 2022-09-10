@@ -19,6 +19,7 @@ Route::get('/category/{id}', 'App\Http\Controllers\CategoryController@show')->na
 
 // Sneaker page
 Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->name('sneakers.index');
+
  
 
 Auth::routes();
@@ -33,6 +34,7 @@ Route::middleware('admin')->group(function () {
 
     // Home page ADMIN panel
     Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name("admin.index");
+
 
     //sneakers index
     Route::get("/admin/sneakers", 'App\Http\Controllers\SneakerController@adminIndex')->name("admin.sneaker");

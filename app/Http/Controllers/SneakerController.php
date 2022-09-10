@@ -44,7 +44,6 @@ class SneakerController extends Controller
     public function store(Request $request)
     {
         Sneaker::validate($request);
-
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
@@ -56,7 +55,6 @@ class SneakerController extends Controller
             "retailprice" => $request->retailprice,
             "price" => $request->price,
             "id_category" => $request->idCategory,
-
         ];
 
         $sneaker = Sneaker::create($data);
