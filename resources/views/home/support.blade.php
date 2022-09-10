@@ -7,7 +7,7 @@
       <div class="col-md-5">
         <h1>Support</h1>
         <h2>Can we help you?</h2>
-        <p class="fs-3">you can write your problem, suggestion, doubt below.</p>
+        <p class="fs-3">you can write your problem, suggestion</p>
         <form class="form-floating">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
           <label for="floatingTextarea" style="color: #000;">What Do You Need?</label>
