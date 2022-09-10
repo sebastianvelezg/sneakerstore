@@ -7,6 +7,7 @@
 <form action="{{ route('admin.sneakerStore') }}" enctype="multipart/form-data" method="POST">
   @method('POST')
   @csrf
+
   <div class="mb-3">
     <label for="" class="form-label">Name</label>
     <div class="col-md-6">
@@ -19,6 +20,7 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Colorway</label>
     <div class="col-md-6">
@@ -31,6 +33,7 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Brand</label>
     <div class="col-md-6">
@@ -43,6 +46,7 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Description</label>
     <div class="col-md-6">
@@ -55,6 +59,7 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Release Date</label>
     <div class="col-md-6">
@@ -67,6 +72,7 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Retail Price</label>
     <div class="col-md-6">
@@ -79,31 +85,35 @@
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Price</label>
     <div class="col-md-6">
       <input id="price" type="price" class="form-control @error('price') is-invalid @enderror" name="price"
         value="{{ old('price') }}" autocomplete="price">
-      @error('price')
+        @error('price')
         <span class="invalid-feedback d-block" role="alert">
           <strong>*{{ $message }}</strong>
         </span>
       @enderror
     </div>
   </div>
+
   <div class="mb-3">
     <label for="" class="form-label">Image</label>
     <input id="image" name="image" type="file" class="" tabindex="3" />
     @error('image')
-      <span class="invalid-feedback d-block" role="alert">
-        <strong>*{{ $message }}</strong>
-      </span>
-    @enderror
+    <span class="invalid-feedback d-block" role="alert">
+      <strong>*{{ $message }}</strong>
+    </span>
+  @enderror
   </div>
+
   <div class="mb-3">
-    <input id="id_category" name="id_category" type="number" class="form-control" tabindex="3"
+    <input id="idCategory" name="idCategory" type="number" class="form-control" tabindex="3"
       value="{{ $viewData['category']->getId() }}" style="visibility: hidden; height: 0" />
   </div>
+
   <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
   <button type="submit" class="btn bg-dark text-white">Save</button>
 </form>
