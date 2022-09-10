@@ -17,6 +17,9 @@ Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name
 // Category page
 Route::get('/category/{id}', 'App\Http\Controllers\CategoryController@show')->name('category.show');
 
+//sneakers index
+Route::get("/sneakers/{id}", 'App\Http\Controllers\SneakerController@index')->name("sneaker.index");
+
  
 
 Auth::routes();
@@ -31,6 +34,7 @@ Route::middleware('admin')->group(function () {
 
     // Home page ADMIN panel
     Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name("admin.index");
+
 
     //sneakers index
     Route::get("/admin/sneakers", 'App\Http\Controllers\SneakerController@adminIndex')->name("admin.sneaker");

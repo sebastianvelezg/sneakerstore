@@ -58,8 +58,8 @@ class CategoryController extends Controller
         $viewData["title"] =  "Category - Game";
         $viewData["subtitle"] = "Name of Category";
         $viewData["category"] = Category::find($id);
-        $viewData['games'] = Game::where('id_category', $id)->orderBy('created_at', 'desc')->get();
-        $viewData['highlights'] = Game::where('id_category', $id)->orderBy('buyquantity', 'desc')->get();
+        $viewData['sneakers'] = Sneaker::where('id_category', $id)->orderBy('created_at', 'desc')->get();
+        //$viewData['highlights'] = Sneaker::where('id_category', $id)->orderBy('buyquantity', 'desc')->get();
 
         return view('category.show')->with("viewData", $viewData);
     }

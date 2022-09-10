@@ -2,12 +2,12 @@
 @section('title', $viewData['title'])
 @section('content')
 
-<div class="d-flex justify-content-around align-items-center" style="height: calc(100vh - 3rem);">
+<div class="d-flex justify-content-around align-items-center" style="height: calc(45vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-5">
         <h1>Category</h1>
         <h2>How?</h2>
-        <p class="fs-3">In game store the games are separated by categories, so it is easier to find what you are looking for or find other games related to the ones you like.</p>
+        <p class="fs-3">In SneakerStore all products are divided in categories so you can choose and search easily any of you rhypebeast needs.</p>
 
         <div class="row">
           <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -27,13 +27,13 @@
       </div>
 
       <div class="col-md-5">
-        <img src="/images/dunk5.png" alt="">
+        <img src="images/dunksquared.png" class="rounded" alt=""  width="450" height="450">
       </div>
     </div>
   </div>
 
   <div class="bg-dark">
-    <div class="container">
+    <div class="container rounded" >
       <div class="row">
         @foreach ($viewData['categories'] as $category)
           <div class="col-md-3">

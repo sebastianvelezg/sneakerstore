@@ -17,7 +17,7 @@ class SneakerController extends Controller
         $viewData["sneaker"] = Sneaker::find($id);
         $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
         $viewData['images'] = File::files(public_path("image/sneakers/" . $viewData['sneaker']->getId()));
-        return view("sneaker.index")->with("viewData", $viewData);
+        return view("sneakers.index")->with("viewData", $viewData);
     }
 
     public function adminIndex()
@@ -44,7 +44,6 @@ class SneakerController extends Controller
     public function store(Request $request)
     {
         Sneaker::validate($request);
-
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
@@ -56,7 +55,6 @@ class SneakerController extends Controller
             "retailprice" => $request->retailprice,
             "price" => $request->price,
             "id_category" => $request->idCategory,
-
         ];
 
         $sneaker = Sneaker::create($data);
