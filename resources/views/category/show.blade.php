@@ -108,6 +108,7 @@
                 </div>
               </div>
             </a>
+<<<<<<< HEAD
             <div class="actions d-flex flex-column justify-content-around align-items-center">
               {{-- <a class="btn btn-outline-light" href="{{ route('cart.add', $sneaker->getId()) }}">
                 <i class="fa-solid fa-cart-arrow-down"></i>
@@ -116,6 +117,8 @@
                 ${{ $sneaker->getPrice() }}
               </a> --}}
             </div>
+=======
+>>>>>>> d21ad732b42959dbad7493e6b3fabbb094118518
           </div>
         @endforeach
       </div>
