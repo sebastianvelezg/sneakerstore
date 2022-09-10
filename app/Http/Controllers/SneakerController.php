@@ -45,8 +45,6 @@ class SneakerController extends Controller
     {
         Sneaker::validate($request);
 
-
-
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
