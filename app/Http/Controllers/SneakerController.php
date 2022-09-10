@@ -17,7 +17,7 @@ class SneakerController extends Controller
         $viewData["sneaker"] = Sneaker::find($id);
         $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
         $viewData['images'] = File::files(public_path("image/sneakers/" . $viewData['sneaker']->getId()));
-        return view("sneaker.index")->with("viewData", $viewData);
+        return view("sneakers.index")->with("viewData", $viewData);
     }
 
     public function adminIndex()

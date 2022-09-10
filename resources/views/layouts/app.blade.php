@@ -24,6 +24,8 @@
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.index')}}">Sneakers</a>
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">Clothing</a>
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">Accessories</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">About</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">Support</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
 
                       @guest
