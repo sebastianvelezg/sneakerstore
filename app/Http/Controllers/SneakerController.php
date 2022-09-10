@@ -22,7 +22,6 @@ class SneakerController extends Controller
 
     public function adminIndex()
     {
-
         $viewData = [];
         $viewData['categories'] = Category::all();
         return view('sneakers.indexAdmin')->with('viewData', $viewData);
@@ -45,37 +44,26 @@ class SneakerController extends Controller
     public function store(Request $request)
     {
         Sneaker::validate($request);
+
+
+
         $filename = time() . $request->image->getClientOriginalName();
 
         $data = [
-        "name" => $request->name,
-        "colorway" => $request->colorway,
-        "brand" => $request->brand,
-        "description" => $request->description,
-        "releasedate" => $request->releasedate,
-        "retailprice" => $request->retailprice,
-        "price" => $request->price,
-        "id_category" => $request->id_category,
+            "name" => $request->name,
+            "colorway" => $request->colorway,
+            "brand" => $request->brand,
+            "description" => $request->description,
+            "releasedate" => $request->releasedate,
+            "retailprice" => $request->retailprice,
+            "price" => $request->price,
+            "id_category" => $request->idCategory,
+
         ];
 
         $sneaker = Sneaker::create($data);
         $sneaker->setImage($filename);
         $sneaker->save();
-
-        // $sneaker = new Sneaker();
-        // $sneaker->setName($request->name);
-        // $sneaker->setColorway($request->colorway);
-        // $sneaker->setBrand($request->brand);
-        // $sneaker->setDescription($request->description);
-        // $sneaker->setReleasedate($request->releasedate);
-        // $sneaker->setRetailprice($request->retailprice);
-        // $sneaker->setPrice($request->price);
-        // $sneaker->setImage('no-image.png');
-        // $sneaker->setIdCategory($request->id_category);
-
-        // $sneaker->save();
-        //dd('hola');
-
         $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
 
         return redirect(route('admin.sneakersCategory', $request->idCategory));
@@ -83,11 +71,11 @@ class SneakerController extends Controller
 
     public function show($id)
     {
-    $viewData = [];
-    $viewData['sneaker'] = Sneaker::findOrFail($id);
-    $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
-    $viewData['images'] = File::files(public_path("image/categories/" . $viewData['sneaker']->getId()));
-    return view('sneaker.showSneaker')->with('viewData', $viewData);
+        $viewData = [];
+        $viewData['sneaker'] = Sneaker::findOrFail($id);
+        $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
+        $viewData['images'] = File::files(public_path("image/category/" . $viewData['sneaker']->getId()));
+        return view('sneaker.showSneaker')->with('viewData', $viewData);
     }
 
     // Delete images of a sneaker
@@ -101,9 +89,9 @@ class SneakerController extends Controller
     public function addImages(Request $request, $id)
     {
         if ($request->hasfile('files')) {
-        foreach ($request->file('files') as $image) {
-            $filename = time() . $image->getClientOriginalName();
-            $image->move(public_path("image/sneakers/" . $id), $filename);
+            foreach ($request->file('files') as $image) {
+                $filename = time() . $image->getClientOriginalName();
+                $image->move(public_path("image/sneakers/" . $id), $filename);
             }
         }
         return back();
@@ -122,19 +110,19 @@ class SneakerController extends Controller
         Sneaker::validateUpdate($request);
         $sneaker = Sneaker::find($id);
         if (isset($request->image)) {
-        File::delete(public_path('image/sneakers/' . $sneaker->getId() . '/' . $sneaker->getImage()));
-        $filename = time() . $request->image->getClientOriginalName();
-        $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
-        $sneaker->setImage($filename);
+            File::delete(public_path('image/sneakers/' . $sneaker->getId() . '/' . $sneaker->getImage()));
+            $filename = time() . $request->image->getClientOriginalName();
+            $request["image"]->move(public_path("image/sneakers/" . $sneaker->getId()), $filename);
+            $sneaker->setImage($filename);
         }
 
         $sneaker->setName($request->name);
-        $sneaker->setColorway($request->developer);
-        $sneaker->setBrand($request->description);
+        $sneaker->setColorway($request->colorway);
+        $sneaker->setBrand($request->brand);
         $sneaker->setDescription($request->description);
         $sneaker->setReleasedate($request->releasedate);
-        $sneaker->setRetailrice($request->retailprice);
-        $sneaker->setPrice($request->price);        
+        $sneaker->setRetailprice($request->retailprice);
+        $sneaker->setPrice($request->price);
         $sneaker->setIdCategory($request->idCategory);
 
         $sneaker->save();
@@ -154,6 +142,6 @@ class SneakerController extends Controller
         return redirect(route('admin.sneakersCategory', $idCategory));
         
         Sneaker::destroy($id);
-        return redirect(route('admin.sneaker'));  
+        return redirect(route('admin.sneaker'));
     }
 }

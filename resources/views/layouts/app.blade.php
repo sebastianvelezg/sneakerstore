@@ -20,7 +20,7 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav ms-auto">
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.index')}}">Home</a>
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">Categories</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('category.index')}}">Categories</a>
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.index')}}">Sneakers</a>
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">Clothing</a>
                       <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">Accessories</a>
