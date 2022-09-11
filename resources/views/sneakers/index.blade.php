@@ -2,11 +2,13 @@
 @section('title', $viewData['title'])
 @section('content')
 
+
 <div class="bg-dark text-light pt-5">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center" style="min-height: calc(40vh - 3rem)">
       <div class="col-md-6">
         <h1 class="text-center">{{ $viewData['sneaker']->getName()}} {{ $viewData['sneaker']->getColorway() }}</h1>
+
           <ul class="list-group list-group-flush rounded">
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">

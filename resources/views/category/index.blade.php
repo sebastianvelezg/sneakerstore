@@ -28,6 +28,7 @@
 
       <div class="col-md-5 mt-2 mb-2">
         <img src="images/store1.png" class="rounded" alt=""  width="533.33" height="300">
+
       </div>
     </div>
   </div>
