@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Dashboard')
 @section('content_header')
-<h1>Sneakers List</h1>
+<h1>Clothes List</h1>
 @stop
 @section('content')
 
@@ -11,11 +11,11 @@
         <div class="card-header">
           <h3 class="card-title">{{ $category->getName() }}</h3>
           <div class="card-tools">
-            <a href="{{ route('admin.sneakerCreate', ['id'=> $category->getId()]) }}" class="btn btn-dark mb-3">
+            <a href="{{ route('admin.clotheCreate', ['id'=> $category->getId()]) }}" class="btn btn-dark mb-3">
             Create
               <i class="fas fa-plus"></i>
             </a>
-            <a href="{{ route('admin.sneakersCategory', $category->getId()) }}" class="btn btn-dark mb-3">
+            <a href="{{ route('admin.clothesCategory', $category->getId()) }}" class="btn btn-dark mb-3">
             See All
               <i class="fas fa-eye"></i>
             </a>

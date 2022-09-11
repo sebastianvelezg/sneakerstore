@@ -1,14 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Sneaker;
+use App\Models\Category;
 
 class HomeController extends Controller
 // Render view of home
 {
-    public function index()
-        {
-            return view('home.index');
-        }
+  // Home index
+  public function index()
+  {
+    $viewData = [];
+    $viewData['title'] = 'Home Page - Sneaker';
+    $viewData['latestSneakers'] = Sneaker::orderBy('created_at', 'desc')->limit(5)->get();
+    $viewData['cheapestSneakers'] = Sneaker::orderBy('price', 'asc')->limit(5)->get();
+    $viewData['randomProducts'] = Sneaker::inRandomOrder()->limit(4)->get();
+    $viewData['categories'] = Category::inRandomOrder()->limit(3)->get();;
+    $viewData['sneakers'] = Sneaker::all();
+    return view('home.index')->with('viewData', $viewData);
+  }
 // About page
   public function about()
   {

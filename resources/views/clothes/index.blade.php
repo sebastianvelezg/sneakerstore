@@ -6,55 +6,50 @@
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center" style="min-height: calc(40vh - 3rem)">
       <div class="col-md-6">
-        <h1 class="text-center">{{ $viewData['sneaker']->getName()}} {{ $viewData['sneaker']->getColorway() }}</h1>
+        <h1 class="text-center">{{ $viewData['clothe']->getName()}} {{ $viewData['clothe']->getColorway() }}</h1>
           <ul class="list-group list-group-flush rounded">
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-user"></i>
-                <span class="font-weight-bold">Name: </span>
-                {{ $viewData['sneaker']->getName() }}
+                <span class="font-weight-bold">Type: </span>
+                {{ $viewData['clothe']->getType() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-tag"></i>
                 <span class="font-weight-bold">Brand: </span>
-                {{ $viewData['sneaker']->getBrand() }}
+                {{ $viewData['clothe']->getBrand() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
-                <i class="fas fa-dollar-sign"></i>
-                <span class="font-weight-bold">Colorway: </span>
-                {{ $viewData['sneaker']->getColorway() }}
-              </p>
-              <p class="w-100">
                 <i class="fas fa-id-badge"></i>
                 <span class="font-weight-bold">Release Date: </span>
-                {{ $viewData['sneaker']->getReleasedate() }}
+                {{ $viewData['clothe']->getReleasedate() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-abacus"></i>
                 <span class="font-weight-bold">Retail Price: </span>
-                {{ $viewData['sneaker']->getRetailprice() }}
+                {{ $viewData['clothe']->getRetailprice() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-calendar-plus"></i>
                 <span class="font-weight-bold">Price: </span>
-                {{ $viewData['sneaker']->getprice() }}
+                {{ $viewData['clothe']->getprice() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-calendar"></i>
                 <span class="font-weight-bold">Description: </span>
-                {{ $viewData['sneaker']->getDescription() }}
+                {{ $viewData['clothe']->getDescription() }}
             </li>
           </ul>
         </div>
         <div class="col-md-6">
           <img
-            src="{{ URL::to('/') }}/image/sneakers/{{ $viewData['sneaker']->getId() }}/{{ $viewData['sneaker']->getImage() }}"
+            src="{{ URL::to('/') }}/image/clothes/{{ $viewData['clothe']->getId() }}/{{ $viewData['clothe']->getImage() }}"
             class="card-img-top" alt="..." style="max-height: 80vh; object-fit:cover;" ; />
         </div>
       </div>
@@ -74,15 +69,15 @@
           @if ($i + 1 < count($viewData['images']))
             <div class="d-flex">
               <img
-                src="{{ URL::to('/') }}/image/sneakers/{{ $viewData['sneaker']->getId() }}/{{ $viewData['images'][$i]->getFilename() }}"
+                src="{{ URL::to('/') }}/image/clothes/{{ $viewData['clothe']->getId() }}/{{ $viewData['images'][$i]->getFilename() }}"
                 style="height: 50vh; object-fit: cover" class="d-block w-100" alt="..." />
               <img
-                src="{{ URL::to('/') }}/image/sneakers/{{ $viewData['sneaker']->getId() }}/{{ $viewData['images'][$i + 1]->getFilename() }}"
+                src="{{ URL::to('/') }}/image/clothes/{{ $viewData['clothe']->getId() }}/{{ $viewData['images'][$i + 1]->getFilename() }}"
                 style="height: 50vh; object-fit: cover" class="d-block w-100" alt="..." />
             </div>
           @else
             <img
-              src="{{ URL::to('/') }}/image/sneakers/{{ $viewData['sneaker']->getId() }}/{{ $viewData['images'][$i]->getFilename() }}"
+              src="{{ URL::to('/') }}/image/clothes/{{ $viewData['clothe']->getId() }}/{{ $viewData['images'][$i]->getFilename() }}"
               style="width: 100%; height: 50vh; object-fit: cover" class="d-block w-100" alt="..." />
           @endif
         </div>

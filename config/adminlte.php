@@ -341,6 +341,11 @@ return [
             'url'         => 'admin/sneakers',
             'icon'        => 'fas fa-fw fa-boot',
         ],
+        [
+            'text'        => 'Clothes',
+            'url'         => 'admin/clothes',
+            'icon'        => 'fas fa-fw fa-boot',
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',

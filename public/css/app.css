@@ -21,3 +21,9 @@ nav {
     height: 18vw;
     object-fit: cover;
 }
+.bg-card {
+    background-color: #d72323 !important;
+}
+.bg-card-sneaker {
+    background-color: #ffffff !important;
+}
