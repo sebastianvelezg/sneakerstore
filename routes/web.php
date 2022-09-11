@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 // Home page
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
@@ -19,6 +20,9 @@ Route::get('/category/{id}', 'App\Http\Controllers\CategoryController@show')->na
 
 // Sneaker page
 Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->name('sneakers.index');
+
+// clothing page
+Route::get('/clothe/{id}', 'App\Http\Controllers\ClotheController@index')->name('clothes.index');
 
  
 
@@ -75,6 +79,50 @@ Route::middleware('admin')->group(function () {
 
     // Add images for sneaker
     Route::post("/admin/sneakers/add/images/{id}", 'App\Http\Controllers\SneakerController@addImages')->name("admin.sneakerAddImages");
+
+
+
+    //sneakers index
+    Route::get("/admin/clothes", 'App\Http\Controllers\ClotheController@adminIndex')->name("admin.clothe");
+    
+
+    // Admin create Clothe with page specific category
+    Route::get("/admin/clothe/create/{id}", 'App\Http\Controllers\ClotheController@create')->name("admin.clotheCreate");
+
+    // Admin create Clothe with page specific category
+    Route::post("/admin/clothe/store", 'App\Http\Controllers\ClotheController@store')->name("admin.clotheStore");
+
+    //create Clothe
+    //Route::get("/admin/Clothes/create", 'App\Http\Controllers\ClotheController@create')->name("admin.ClotheCreate1");
+
+    //edit Clothe
+    Route::get("/admin/clothes/{id}/edit", 'App\Http\Controllers\ClotheController@edit')->name("admin.clotheEdit");
+
+    // Admin Clothe page specific category
+    Route::get("/admin/clothe/{id}", 'App\Http\Controllers\ClotheController@adminShow')->name("admin.clothesCategory");
+
+    //store Clothe
+    Route::post("/admin/clothes", 'App\Http\Controllers\ClotheController@store')->name("admin.clotheStore");
+
+    //update Clothe
+    Route::put("/admin/clothes/{id}", 'App\Http\Controllers\ClotheController@update')->name("admin.clotheUpdate");
+
+    //destroy Clothe
+    Route::get("/admin/clothes/delete/{id}", 'App\Http\Controllers\ClotheController@destroy')->name("admin.clotheDelete");
+
+    //show Clothe
+    Route::get("/admin/clothes/{id}", 'App\Http\Controllers\ClotheController@show')->name("admin.clotheShow");
+
+    // Admin page of add imgaes for Clothe
+    Route::get("/admin/clothes/show/{id}", 'App\Http\Controllers\ClotheController@show')->name("admin.clotheShow");
+
+    // Delete image for Clothe
+    Route::get("/admin/clothes/delete/Clothe/{id}", 'App\Http\Controllers\ClotheController@deleteImage')->name("admin.clotheDeleteImage");
+
+    // Add images for Clothe
+    Route::post("/admin/clothes/add/images/{id}", 'App\Http\Controllers\ClotheController@addImages')->name("admin.clotheAddImages");
+
+
 
     // Admin user page
     Route::get("/admin/user", 'App\Http\Controllers\UserController@indexAdmin')->name("admin.user");

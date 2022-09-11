@@ -96,7 +96,7 @@
                 <img src="{{ URL::to('/') }}/image/sneakers/{{ $sneaker->getId() }}/{{ $sneaker->getImage() }}"
                   class="" alt="..." style="width: 30%; max-height: 8rem" />
                 <div class="d-flex flex-column justify-content-center ms-2">
-                  <h5 class="mb-1">{{ $sneaker->getName() }}</h5>
+                  <h5 class="mb-1">{{ $sneaker->getName() }} {{ $sneaker->getColorway() }}</h5>
                   <p class="mb-1" style="
                                   display: -webkit-box;
                                   -webkit-line-clamp: 2;
