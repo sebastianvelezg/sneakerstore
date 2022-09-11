@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clothe extends Model
 {
-    protected $table = 'clothe';
+    protected $table = 'clothes';
     protected $primaryKey = 'id';
     protected $fillable = ['type', 'brand', 'description', 'releasedate', 'retailprice', 'price','image', 'id_category'];
 

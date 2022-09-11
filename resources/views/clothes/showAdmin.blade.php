@@ -13,7 +13,7 @@
   @foreach ($viewData['clothes'] as $clothe)
     <div class="card" style="width: 40%;">
       <div class="card-header">
-        <h3 class="card-title">{{ $clothe->getName() }}</h3>
+        <h3 class="card-title">{{ $clothe->getType() }}</h3>
         <form class="card-tools" action="{{ route('admin.clotheDelete', $clothe->getId()) }}">
           @csrf @method('GET')
           <a href="{{ route('admin.clotheEdit', $clothe->getId()) }}" class="btn btn-dark mb-3">

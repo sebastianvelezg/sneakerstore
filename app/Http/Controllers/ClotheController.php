@@ -59,7 +59,7 @@ class ClotheController extends Controller
         $clothes = Clothe::create($data);
         $clothes->setImage($filename);
         $clothes->save();
-        $request["image"]->move(public_path("image/clothes/" . $clothes>getId()), $filename);
+        $request["image"]->move(public_path("image/clothes/" . $clothes->getid()), $filename);
 
         return redirect(route('admin.clothesCategory', $request->idCategory));
     }
@@ -69,8 +69,8 @@ class ClotheController extends Controller
         $viewData = [];
         $viewData['clothe'] = Clothe::findOrFail($id);
         $viewData['category'] = Category::find($viewData['clothe']->getIdCategory());
-        $viewData['images'] = File::files(public_path("image/category/" . $viewData['clothe']->getId()));
-        return view('clothe.showClothe')->with('viewData', $viewData);
+        $viewData['images'] = File::files(public_path("image/clothes/" . $viewData['clothe']->getId()));
+        return view('clothes.show')->with('viewData', $viewData);
     }
 
     public function deleteImage($param)
@@ -110,8 +110,7 @@ class ClotheController extends Controller
             $clothe->setImage($filename);
         }
 
-        $clothe->setName($request->name);
-        $clothe->setColorway($request->colorway);
+        $clothe->setType($request->type);
         $clothe->setBrand($request->brand);
         $clothe->setDescription($request->description);
         $clothe->setReleasedate($request->releasedate);

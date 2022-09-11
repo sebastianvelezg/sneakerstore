@@ -68,8 +68,8 @@ Route::middleware('admin')->group(function () {
     //destroy sneaker
     Route::get("/admin/sneakers/delete/{id}", 'App\Http\Controllers\SneakerController@destroy')->name("admin.sneakerDelete");
 
-    //show sneaker
-    Route::get("/admin/sneakers/{id}", 'App\Http\Controllers\SneakerController@show')->name("admin.sneakerShow");
+    // //show sneaker
+    // Route::get("/admin/sneakers/{id}", 'App\Http\Controllers\SneakerController@show')->name("admin.sneakerShow");
 
     // Admin page of add imgaes for sneaker
     Route::get("/admin/sneakers/show/{id}", 'App\Http\Controllers\SneakerController@show')->name("admin.sneakerShow");
@@ -79,7 +79,6 @@ Route::middleware('admin')->group(function () {
 
     // Add images for sneaker
     Route::post("/admin/sneakers/add/images/{id}", 'App\Http\Controllers\SneakerController@addImages')->name("admin.sneakerAddImages");
-
 
 
     //sneakers index

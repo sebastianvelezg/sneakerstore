@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Edit Clothes')
 @section('content_header')
-<h1>Edit {{ $viewData['clothe']->getName() }}</h1>
+<h1>Edit {{ $viewData['clothe']->getBrand() }} {{ $viewData['clothe']->getType() }}</h1>
 @stop
 @section('content')
 

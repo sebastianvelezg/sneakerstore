@@ -68,10 +68,10 @@ class SneakerController extends Controller
     public function show($id)
     {
         $viewData = [];
-        $viewData['sneaker'] = Sneaker::findOrFail($id);
+        $viewData['sneaker'] = Sneaker::find($id);
         $viewData['category'] = Category::find($viewData['sneaker']->getIdCategory());
-        $viewData['images'] = File::files(public_path("image/category/" . $viewData['sneaker']->getId()));
-        return view('sneaker.showSneaker')->with('viewData', $viewData);
+        $viewData['images'] = File::files(public_path("image/sneakers/" . $viewData['sneaker']->getId()));
+        return view('sneakers.show')->with('viewData', $viewData);
     }
 
     // Delete images of a sneaker

@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center" style="min-height: calc(40vh - 3rem)">
       <div class="col-md-6">
-        <h1 class="text-center">{{ $viewData['clothe']->getName()}} {{ $viewData['clothe']->getColorway() }}</h1>
+        <h1 class="text-center">{{ $viewData['clothe']->getType()}}</h1>
           <ul class="list-group list-group-flush rounded">
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">

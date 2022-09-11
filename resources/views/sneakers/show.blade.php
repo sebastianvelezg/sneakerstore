@@ -11,7 +11,7 @@
           <p>
             <i class="fas fa-user"></i>
             <span class="font-weight-bold">name: </span>
-            {{ $viewData['sneaker']->getDeveloper() }}
+            {{ $viewData['sneaker']->getName() }}
           </p>
         </div>
         <div class="col-md-6">
@@ -27,7 +27,7 @@
           <p>
             <i class="fas fa-align-justify"></i>
             <span class="font-weight-bold">Brand: </span>
-            {{ $viewData['sneaker']->get Brand() }}
+            {{ $viewData['sneaker']->getBrand() }}
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <p>
               <i class="fas fa-dollar-sign"></i>
               <span class="font-weight-bold">Retail Price: </span>
-              {{ $viewData['sneaker']->getRetailrice() }}
+              {{ $viewData['sneaker']->getRetailprice() }}
             </p>
           </div>
         <div class="col-md-6">
@@ -59,14 +59,14 @@
           <p>
             <i class="fas fa-id-badge"></i>
             <span class="font-weight-bold">Colorway: </span>
-            {{ $viewData['sneaker']->getAgerating() }}
+            {{ $viewData['sneaker']->getColorway() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-abacus"></i>
             <span class="font-weight-bold">Description: </span>
-            {{ $viewData['sneaker']->getBuyquantity() }}
+            {{ $viewData['sneaker']->getDescription() }}
           </p>
         </div>
       </div>
