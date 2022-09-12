@@ -18,7 +18,7 @@
           <p>
             <i class="fas fa-user"></i>
             <span class="font-weight-bold">type: </span>
-            {{ $viewData['clothe']->getType() }}
+            {{ $viewData['accessory']->getType() }}
           </p>
         </div>
         
@@ -28,7 +28,7 @@
           <p>
             <i class="fas fa-align-justify"></i>
             <span class="font-weight-bold">Brand: </span>
-            {{ $viewData['clothe']->getBrand() }}
+            {{ $viewData['accessory']->getBrand() }}
           </p>
         </div>
       </div>
@@ -36,22 +36,15 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-plus"></i>
-            <span class="font-weight-bold">Release Date: </span>
-            {{ $viewData['clothe']->getReleasedate() }}
+            <span class="font-weight-bold">Material: </span>
+            {{ $viewData['accessory']->getMaterial() }}
           </p>
         </div>
-        <div class="col-md-6">
-            <p>
-              <i class="fas fa-dollar-sign"></i>
-              <span class="font-weight-bold">Retail Price: </span>
-              {{ $viewData['clothe']->getRetailprice() }}
-            </p>
-          </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-dollar-sign"></i>
             <span class="font-weight-bold">Price: </span>
-            {{ $viewData['clothe']->getPrice() }}
+            {{ $viewData['accessory']->getPrice() }}
           </p>
         </div>
       </div>
@@ -60,7 +53,7 @@
           <p>
             <i class="fas fa-abacus"></i>
             <span class="font-weight-bold">Description: </span>
-            {{ $viewData['clothe']->getDescription() }}
+            {{ $viewData['accessory']->getDescription() }}
           </p>
         </div>
       </div>
@@ -69,20 +62,20 @@
           <p>
             <i class="fas fa-calendar"></i>
             <span class="font-weight-bold">Date Updated: </span>
-            {{ $viewData['clothe']->getUpdateAt() }}
+            {{ $viewData['accessory']->getUpdateAt() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-check"></i>
             <span class="font-weight-bold">Date Created: </span>
-            {{ $viewData['clothe']->getCreateAt() }}
+            {{ $viewData['accessory']->getCreateAt() }}
           </p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <img src="./../../../image/clothes/{{ $viewData['clothe']->getId() }}/{{ $viewData['clothe']->getImage() }}" alt=""
+      <img src="./../../../image/accessories/{{ $viewData['accessory']->getId() }}/{{ $viewData['accessory']->getImage() }}" alt=""
         style="width:55%; " class="mx-5">
     </div>
   </div>
@@ -104,7 +97,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{ route('admin.clotheAddImages', $viewData['clothe']->getId()) }}" enctype="multipart/form-data"
+          <form action="{{ route('admin.accessoryAddImages', $viewData['accessory']->getId()) }}" enctype="multipart/form-data"
             method="POST">
             @csrf
             @method('POST')
@@ -127,17 +120,17 @@
   <div class="d-flex flex-wrap">
 
     @foreach ($viewData['images'] as $image)
-      @if ($image->getFilename() == $viewData['clothe']->getImage())
+      @if ($image->getFilename() == $viewData['accessory']->getImage())
         @continue
       @endif
 
       <div class="col-md-4">
         <div class="card">
           <img width="100%" height="200" style="object-fit:cover;"
-            src="./../../../image/clothes/{{ $viewData['clothe']->getId() }}/{{ $image->getFilename() }} " alt=""
+            src="./../../../image/accessories/{{ $viewData['accessory']->getId() }}/{{ $image->getFilename() }} " alt=""
             srcset="">
           <div class="card-body">
-            <a href="{{ route('admin.clotheDeleteImage', $viewData['clothe']->getId() . ' $- ' . $image->getFilename()) }}"
+            <a href="{{ route('admin.accessoryDeleteImage', $viewData['accessory']->getId() . ' $- ' . $image->getFilename()) }}"
               class="btn btn-outline-danger stretched-link">
               Delete
               <i class="fas fa-trash"></i>

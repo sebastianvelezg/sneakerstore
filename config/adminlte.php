@@ -346,6 +346,11 @@ return [
             'url'         => 'admin/clothes',
             'icon'        => 'fas fa-fw fa-boot',
         ],
+        [
+            'text'        => 'Accessories',
+            'url'         => 'admin/accessories',
+            'icon'        => 'fas fa-fw fa-boot',
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',
