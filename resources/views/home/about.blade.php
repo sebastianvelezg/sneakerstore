@@ -20,19 +20,11 @@
       </div>
     </div>
     <div class="col-md-5">
-      <img src="./img/logo2.png" alt="">
+      <img src="./images/dunk2.png" alt="">
     </div>
   </div>
   </div>
   <div class="container">
-    <div class="row justify-content-center my-5">
-      <div class="col-md-6 bg-dark text-light p-5 rounded shadow-lg">
-        <h2 class="text-center">@lang('messages.subtitleAbout')</h2>
-        <p class="fs-4">@lang('messages.subdescriptionAbout')</p>
-        <a href="{{ route('category.index') }}" class="btn btn-outline-light">@lang('messages.explore') <i
-            class="fa-solid fa-right-long"></i></a>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-6">
         <h1 class="text-center">@lang('messages.subtitleAboutCommunity')</h1>

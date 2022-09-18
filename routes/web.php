@@ -24,6 +24,9 @@ Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->nam
 // clothing page
 Route::get('/clothe/{id}', 'App\Http\Controllers\ClotheController@index')->name('clothes.index');
 
+// clothing page
+Route::get('/accessory/{id}', 'App\Http\Controllers\AccessoryController@index')->name('accessories.index');
+
  
 
 Auth::routes();

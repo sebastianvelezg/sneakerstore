@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Sneaker;
+use App\Models\Clothe;
+use App\Models\Accessory;
 use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
@@ -59,9 +61,20 @@ class CategoryController extends Controller
         $viewData["subtitle"] = "Name of Category";
         $viewData["category"] = Category::find($id);
         $viewData['sneakers'] = Sneaker::where('id_category', $id)->orderBy('created_at', 'desc')->get();
-        //$viewData['highlights'] = Sneaker::where('id_category', $id)->orderBy('buyquantity', 'desc')->get();
+        $viewData['clothes'] = Clothe::where('id_category', $id)->orderBy('created_at', 'desc')->get();
+        $viewData['accessories'] = Accessory::where('id_category', $id)->orderBy('created_at', 'desc')->get();
 
-        return view('category.show')->with("viewData", $viewData);
+        foreach ($viewData["category"] as $category) {
+            if ($viewData["category"]->getType() == "sneaker") {
+                return view('category.show')->with("viewData", $viewData);
+            }
+            if ($viewData["category"]->getType() == "clothe") {
+                return view('category.showClothe')->with("viewData", $viewData);
+            }
+            if ($viewData["category"]->getType() == "accessory") {
+                return view('category.showAccessory')->with("viewData", $viewData);
+            }
+        }
     }
 
     // Return the edit category page

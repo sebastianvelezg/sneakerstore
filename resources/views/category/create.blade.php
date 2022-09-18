@@ -7,7 +7,7 @@
     class="d-flex flex-column justify-content-center align-items-center">
     @method('POST') @csrf
     <div class="mb-3">
-      <label for="" class="form-label">name</label>
+      <label for="" class="form-label">name:</label>
 
       <input id="name" name="name" type="text" class="form-control" tabindex="1" />
       @error('name')
@@ -17,11 +17,21 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">description</label>
+      <label for="" class="form-label">description:</label>
 
       <input id="description" name="description" type="text" class="form-control" tabindex="2" />
 
       @error('description')
+        <span class="invalid-feedback d-block" role="alert">
+          <strong>*{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">type:</label>
+
+      <input id="type" name="type" type="text" class="form-control" tabindex="1" />
+      @error('type')
         <span class="invalid-feedback d-block" role="alert">
           <strong>*{{ $message }}</strong>
         </span>

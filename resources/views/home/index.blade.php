@@ -152,7 +152,7 @@
 
   {{-- categories products --}}
   <div class="row mt-5 mb-5">
-    <h5 class="card-title">Trending Sneakers</h5>
+    <h5 class="card-title">Trending Products</h5>
     <i class="fa fa-home"></i>
     @foreach ($viewData['randomProducts'] as $sneaker)
       <div class="col-sm-3" href="{{ route('sneakers.index', $sneaker->getId()) }}">
@@ -170,89 +170,46 @@
     @endforeach
 </div>
 
-
-
-{{-- popular brands --}}
+{{-- Latest Clothes --}}
 
 <div class="row mt-5 mb-5">
-  <h5 class="card-title">Popular Brands</h5>
-<div class="col-sm-4">
-  <div class="card" style="width: 25rem;">
-    <img src="/images/dunk2.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h5 class="card-title">Latest Shirts</h5>
+  @foreach ($viewData['latestClothes'] as $clothe)
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <img src="{{ URL::to('/') }}/image/clothes/{{ $clothe->getId() }}/{{ $clothe->getImage() }}"
+        class="card-img-top" alt="..."  />
+        <div class="card-body">
+          <h5 class="card-title">{{ $clothe->getType() }}</h5>
+          <p class="card-text">{{ $clothe->getDescription() }}</p>
+          <a href="{{ route('clothes.index', $clothe->getId()) }}" class="btn btn-primary">See More!</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="col-sm-4">
-  <div class="card" style="width: 25rem;">
-    <img src="/images/dunk3.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-4">
-  <div class="card" style="width: 25rem;">
-    <img src="/images/dunk4.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
+    @endforeach
 </div>
 
-{{-- brand products --}}
+  {{-- categories products --}}
+  <div class="row mt-5 mb-5">
+    <h5 class="card-title">Random Products</h5>
+    <i class="fa fa-home"></i>
+    @foreach ($viewData['accessories'] as $accessory)
+      <div class="col-sm-3" href="{{ route('accessories.index', $accessory->getId()) }}">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ URL::to('/') }}/image/accessories/{{ $accessory->getId() }}/{{ $accessory->getImage() }}"
+            class="card-img-top" alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title">{{ $accessory->getType() }}{{ $accessory->getBrand() }}</h5>
+            <p class="card-text">{{ $accessory->getDescription() }}</p>
+            <p class="card-text">{{ $accessory->getPrice() }}</p>
+            <a href="#" class="btn btn-primary">See More!</a>
+          </div>
+        </div>
+      </div>
+    @endforeach
+</div>
 
-<div class="row mt-5 mb-5">
-  <h5 class="card-title">Featured Products</h5>
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-    <img src="/images/dunk2.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-    <img src="/images/dunk3.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-    <img src="/images/dunk4.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-    <img src="/images/dunk5.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-</div>
+
 
 {{-- photo carousel --}}
 
@@ -261,32 +218,23 @@
     <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="/images/dunk4.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
+    @for ($i = 0; $i < min(count($viewData['accessories']), 5); $i++)
+      <div class="carousel-item {{ $i == 0 ? 'active' : '' }}">
+        <a href="{{ route('sneakers.index', $viewData['accessories'][$i]->getId()) }}">
+          <img
+            src="{{ URL::to('/') }}/image/accessories/{{ $viewData['accessories'][$i]->getId() }}/{{ $viewData['accessories'][$i]->getImage() }}"
+            style="height: 50vh; object-fit: cover" class="d-block w-100" alt="..." />
+        </a>
       </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="/images/dunk2.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="/images/dunk3.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-  </div>
-
+    @endfor
   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>

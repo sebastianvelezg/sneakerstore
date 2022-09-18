@@ -13,14 +13,15 @@ class Category extends Model
   // $this->attributes['description'] - string - contains the product description
   // $this->attributes['images'] - string - contains the path of image 
 
-  protected $fillable = ['id', 'name', 'description', 'image'];
+  protected $fillable = ['id', 'name', 'description', 'image', 'type'];
 
   public static function validate($request)
   {
     $request->validate([
       'name' => 'required|max:255',
       'description' => 'required|max:6000',
-      'image' => 'required|image'
+      'image' => 'required|image',
+      'type' => 'required|max:255'
     ]);
   }
 
@@ -62,6 +63,16 @@ class Category extends Model
   public function setImage($image)
   {
     $this->attributes['image'] = $image;
+  }
+
+  public function getType()
+  {
+    return $this->attributes['type'];
+  }
+
+  public function setType($type)
+  {
+    $this->attributes['type'] = $type;
   }
 
   public function getCreateAt()

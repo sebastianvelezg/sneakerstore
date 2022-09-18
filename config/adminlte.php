@@ -332,11 +332,6 @@ return [
             'icon'        => 'fas fa-fw fa-folder',
         ],
         [
-            'text'        => 'Brands',
-            'url'         => 'admin/brand',
-            'icon'        => 'fas fa-fw fa-folder',
-        ],
-        [
             'text'        => 'Sneakers',
             'url'         => 'admin/sneakers',
             'icon'        => 'fas fa-fw fa-boot',

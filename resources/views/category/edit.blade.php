@@ -32,6 +32,17 @@
       @enderror
     </div>
     <div class="mb-3">
+      <label for="" class="form-label">  type</label>
+      <div class="col-md-6">
+        <input id="type" name="type" type="text" class="form-control" value="{{ $viewData['category']->getType() }}" />
+      </div>
+      @error('type')
+        <span class="invalid-feedback d-block" role="alert">
+          <strong>*{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="mb-3">
       <label for="" class="form-label">  Image</label>
       <input id="image" name="image" type="file" />
     </div>
