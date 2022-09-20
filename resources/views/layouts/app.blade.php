@@ -19,23 +19,22 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav ms-auto">
-                      <a class="btn btn-outline-danger mx-2" href="{{ route('home.index')}}">Home</a>
-                      <a class="btn btn-outline-danger mx-2" href="{{ route('category.index')}}">Categories</a>
-                      <a class="btn btn-outline-danger mx-2" href="{{ route('home.about')}}">About</a>
-                      <a class="btn btn-outline-danger mx-2" href="{{ route('home.support')}}">Support</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.index')}}">Home</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('category.index')}}">Categories</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.about')}}">About</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">Support</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
-
                       @guest
-                          <a class="btn btn-outline-danger mx-2" href="{{ route('login') }}">Login</a>
-                          <a class="btn btn-outline-danger mx-2" href="{{ route('register') }}">Register</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">Login</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">Register</a>
                       @else
                       @if (Auth::user()->getRol() == 'admin')
                           <li class="nav-item d-flex">
-                              <a class="btn btn-outline-danger mx-2" href="{{ route('admin.index', Auth::id()) }}">Admin Panel</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('admin.index', Auth::id()) }}">Admin Panel</a>
                           </li>
                       @endif
                           <form id="logout" action="{{ route('logout') }}" method="POST">
-                              <a role="button" class="btn btn-outline-danger mx-2"
+                              <a role="button" class="btn btn-outline-success mx-2"
                               onclick="document.getElementById('logout').submit();">Logout</a>
                               @csrf
                           </form>

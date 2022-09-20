@@ -4,7 +4,6 @@
 <div class="container pt-5">
     <h1 class="text-center">{{ $viewData['category']->getName() }}</h1>
         <h3 class="text-center my-5">New Sneakers</h3>
-
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -35,7 +34,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
     <div class="row">
       <h2 class="text-center my-5">{{ $viewData['category']->getName() }}</h2>
 
