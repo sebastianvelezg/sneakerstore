@@ -2,7 +2,6 @@
 @section('title', $viewData['title'])
 @section('content')
 
-<<<<<<< HEAD
 <div class="d-flex justify-content-around align-items-center bg-primary text-light" style="height: calc(65vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-7">
@@ -91,5 +90,6 @@
       </div>
     </div>
   </div>
+  @Endsection
 
 
