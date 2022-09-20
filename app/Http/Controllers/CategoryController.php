@@ -92,6 +92,7 @@ class CategoryController extends Controller
         $request->validate([
       'name' => 'required',
       'description' => 'required',
+      'type' => 'required',
     ]);
 
         $category = Category::find($id);
