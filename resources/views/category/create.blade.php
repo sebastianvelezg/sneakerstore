@@ -30,7 +30,7 @@
     <div class="mb-3">
       <label for="" class="form-label">type:</label>
 
-      <input id="type" name="type" type="text" class="form-control" tabindex="1" />
+      <input id="type" name="type" type="text" class="form-control" tabindex="3" />
       @error('type')
         <span class="invalid-feedback d-block" role="alert">
           <strong>*{{ $message }}</strong>
