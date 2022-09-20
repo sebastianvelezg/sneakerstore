@@ -104,7 +104,7 @@ class CategoryController extends Controller
 
         $category->setName($request->name);
         $category->setDescription($request->description);
-
+        $category->setType($request->type);
         $category->save();
 
         return redirect(route('admin.category', $category->getId()));
