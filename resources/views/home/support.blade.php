@@ -2,7 +2,7 @@
 @section('title', $viewData['title'])
 @section('content')
 
-<div class="bg-dark text-light d-flex justify-content-around align-items-center" style="height: calc(100vh - 3rem);">
+<div class="bg-dark text-light d-flex justify-content-around align-items-center" style="height: calc(65vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-5">
         <h1>Support</h1>

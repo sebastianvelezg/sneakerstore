@@ -2,7 +2,7 @@
 @section('title', $viewData['title'])
 @section('content')
 
-<div class="d-flex justify-content-around align-items-center" style="height: calc(100vh - 3rem);">
+<div class="d-flex justify-content-around align-items-center" style="height: calc(65vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-6">
         <h1 class="text-center">'The Sneakers lovers mas chimbas.'</h1>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col-md-5">
-      <img src="./images/dunk2.png" alt="">
+      <img src="./images/store2.png" alt="" style="width: 100%; height: 25vh; object-fit:cover;">
     </div>
   </div>
   </div>
@@ -50,10 +50,6 @@
 
   <div class="bg-dark text-light w-100">
     <div class="container p-5 d-flex flex-column justify-content-center align-items-center">
-      <div class="col-md-6">
-        <h3 class="text-center">@lang('messages.features')</h3>
-        <p class="fs-5">@lang('messages.featuresDescription')</p>
-      </div>
 
       <div class="col-md-8 row my-5">
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
