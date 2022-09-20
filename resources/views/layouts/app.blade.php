@@ -24,7 +24,6 @@
                       <a class="btn btn-outline-success mx-2" href="{{ route('home.about')}}">About</a>
                       <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">Support</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
-
                       @guest
                           <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">Login</a>
                           <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">Register</a>

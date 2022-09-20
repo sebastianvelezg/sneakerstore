@@ -20,6 +20,8 @@ Route::get('/clothe/{id}', 'App\Http\Controllers\ClotheController@index')->name(
 // clothing page
 Route::get('/accessory/{id}', 'App\Http\Controllers\AccessoryController@index')->name('accessories.index');
 
+// Sneaker page
+Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->name('sneakers.index');
  
 Auth::routes();
 
