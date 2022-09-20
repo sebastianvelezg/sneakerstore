@@ -334,17 +334,18 @@ return [
         [
             'text'        => 'Sneakers',
             'url'         => 'admin/sneakers',
-            'icon'        => 'fas fa-fw fa-boot',
+            'icon'        => 'fas fa-fw fa-ice-skate
+            .3',
         ],
         [
             'text'        => 'Clothes',
             'url'         => 'admin/clothes',
-            'icon'        => 'fas fa-fw fa-boot',
+            'icon'        => 'fas fa-fw fa-shirt',
         ],
         [
             'text'        => 'Accessories',
             'url'         => 'admin/accessories',
-            'icon'        => 'fas fa-fw fa-boot',
+            'icon'        => 'fas fa-fw fa-folder',
         ],
         ['header' => 'labels'],
         [
