@@ -2,18 +2,18 @@
 @section('title', $viewData['title'])
 @section('content')
 
-<div class="bg-dark text-light d-flex justify-content-around align-items-center" style="height: calc(100vh - 3rem);">
+<div class="bg-dark text-light d-flex justify-content-around align-items-center bg-primary" style="height: calc(65vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-5">
-        <h1>Support</h1>
-        <h2>Can we help you?</h2>
+        <h1>Sneakers Support</h1>
+        <h2>We are here for all you need, can we help you?</h2>
         <p class="fs-3">You can write your problem, suggestion</p>
         <form class="form-floating">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-          <label for="floatingTextarea" style="color: #000;">What Do You Need?</label>
+          <label for="floatingTextarea" style="color: #000;">Tell us!</label>
           <button class="btn btn-outline-light my-3">Send</button>
         </form>
-        <p class="fs-4">For us it is very important to know your opinions, we will contact you as soon as possible!</p>
+        <p class="fs-4">For us it is very important to know your opinions, we will contact you as soon as possible, Sneaker store!</p>
       </div>
 
       <div class="col-md-5">

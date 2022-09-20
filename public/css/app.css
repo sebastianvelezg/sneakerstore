@@ -1,18 +1,23 @@
 .bg-secondary {
-    background-color: #414141 !important;
+    background-color: #1E5128 !important;
 }
 
 .bg-third {
-    background-color: #252525;
+    background-color: #191A19;
 }
 
 .bg-primary {
-    background-color: #d72323 !important;
+    background-color: #4E9F3D !important;
 }
 
 .bg-fourth {
-    background-color: #eeeeee !important;
+    background-color: #D8E9A8 !important;
 }
+
+.bg-red {
+    background-color: #EB1D36 !important;
+}
+
 
 nav {
     font-weight: 700;
@@ -22,7 +27,7 @@ nav {
     object-fit: cover;
 }
 .bg-card {
-    background-color: #d72323 !important;
+    background-color: #4E9F3D !important;
 }
 .bg-card-sneaker {
     background-color: #ffffff !important;
