@@ -10,11 +10,11 @@
         <div class="d-flex p-4 space between justify-content-between">
           <p>
             <i class="fa-solid fa-gamepad"></i>
-            <span class="fw-bold mx-1">Pruducts sold</span>13.450
+            <span class="fw-bold mx-1">Pruducts sold</span>12.569
           </p>
           <p>
             <i class="fa-solid fa-user"></i>
-            <span class="fw-bold mx-1">Sneaker request</span>1.245
+            <span class="fw-bold mx-1">Sneaker requested </span>3.242
           </p>
         </div>
       </div>

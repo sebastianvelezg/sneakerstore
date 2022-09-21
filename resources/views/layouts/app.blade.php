@@ -58,7 +58,7 @@
         </div>
         <!-- footer -->
 
-    <footer class="bg-third text-center text-white absolute-bottom">
+    <footer class="bg-secondary text-center text-white absolute-bottom">
         <div class="container p-4">
             <section class="mb-4">
                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fas fa-fw fa-facebook"></i></a>
@@ -74,14 +74,14 @@
                 </p>
             </section>
         </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    <div class="text-center bg-primary p-3" style="">
       © 2022 Copyright:
       <div class="d-flex flex-column">
         <a class="text-white" href="https://mdbootstrap.com/">Juan Esteban Cardona</a>
         <a class="text-white" href="https://mdbootstrap.com/">Sebastian Velez</a>
       </div>
     </div>
-c
+
   </footer>
   <!-- footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
