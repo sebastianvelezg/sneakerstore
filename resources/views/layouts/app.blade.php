@@ -79,6 +79,7 @@
       <div class="d-flex flex-column">
         <a class="text-white" href="https://mdbootstrap.com/">Juan Esteban Cardona</a>
         <a class="text-white" href="https://mdbootstrap.com/">Sebastian Velez</a>
+        <a class="text-white" href="https://mdbootstrap.com/">Neller Pellegrino</a>
       </div>
     </div>
 
