@@ -19,18 +19,6 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_user_delete(){
-        $user = User::factory()->count(1)->make();
-
-        $user = User::first();
-
-        if($user){
-            $user->destroy($user->id);
-        }
-
-        $this->assertTrue(true);
-    }
-
     public function test_user_duplicate(){
         $user1 = User::make([
             'name' => 'Neller',
