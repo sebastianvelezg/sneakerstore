@@ -57,6 +57,9 @@
                   </p>
                 </div>
               </div>
+              <a class="btn btn-outline-light" href="{{ route('cart.add', $sneaker->getId()) }}">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </a>
             </a>
           </div>
         @endforeach

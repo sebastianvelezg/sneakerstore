@@ -36,6 +36,7 @@
                           <form id="logout" action="{{ route('logout') }}" method="POST">
                               <a role="button" class="btn btn-outline-success mx-2"
                               onclick="document.getElementById('logout').submit();">Logout</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('cart.index')}}">Cart</a>
                               @csrf
                           </form>
                       @endguest

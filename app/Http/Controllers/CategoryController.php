@@ -45,7 +45,7 @@ class CategoryController extends Controller
         // Create unique name of image
         $filename = time() . $request->image->getClientOriginalName();
         $request['image']->move(public_path("image/category/"), $filename);
-        $data = ["name" => $request->name, "description" => $request->description, "image" => $filename];
+        $data = ["name" => $request->name, "description" => $request->description, "image" => $filename,"type" => $request->type];
 
         // Create the category
         Category::create($data);
@@ -92,6 +92,7 @@ class CategoryController extends Controller
         $request->validate([
       'name' => 'required',
       'description' => 'required',
+      'type' => 'required',
     ]);
 
         $category = Category::find($id);
@@ -104,7 +105,7 @@ class CategoryController extends Controller
 
         $category->setName($request->name);
         $category->setDescription($request->description);
-
+        $category->setType($request->type);
         $category->save();
 
         return redirect(route('admin.category', $category->getId()));

@@ -99,4 +99,34 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="bg-dark text-light py-5">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <p class="fs-3">
+          <i class="fa-solid fa-comments fs-1"></i>
+          <span class="fw-bold">@lang('messages.comments') </span>
+          294
+        </p>
+      </div>
+
+      <form class="form" action="{{ route('comment.store', $viewData['sneeaker']->getId()) }}" method="POST">
+        @csrf
+        @method('POST')
+        <div class="form-floating">
+          <textarea class="form-control bg-dark text-light" placeholder="Leave a comment here" id="floatingTextarea"
+            name="comment"></textarea>
+          <label for="floatingTextarea">CreateNew</label>
+          @error('comment')
+            <div class="alert alert-danger mt-2">FieldMustBeFull</div>
+          @enderror
+          <button type="submit" class="btn btn-outline-light mt-2">Create</button>
+        </div>
+      </form>
+
+      @foreach ($viewData['comments'] as $comment)
+        <x-comment-item :comment="$comment" />
+      @endforeach
+
+    </div>
+  </div>
   @endsection

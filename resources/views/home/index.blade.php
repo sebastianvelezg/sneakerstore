@@ -143,7 +143,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ $category->getName() }}</h5>
           <p class="card-text">{{ $category->getDescription() }}</p>
-          <a href="{{ route('category.show', $category->getId()) }}" class="btn btn-primary">See More!</a>
+          <a href="{{ route('category.show', $category->getId()) }}" class="btn btn-primary">See More</a>
         </div>
       </div>
     </div>

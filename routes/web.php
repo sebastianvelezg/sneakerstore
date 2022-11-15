@@ -19,15 +19,27 @@ Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->nam
 Route::get('/clothe/{id}', 'App\Http\Controllers\ClotheController@index')->name('clothes.index');
 // clothing page
 Route::get('/accessory/{id}', 'App\Http\Controllers\AccessoryController@index')->name('accessories.index');
-
 // Sneaker page
 Route::get('/sneaker/{id}', 'App\Http\Controllers\SneakerController@index')->name('sneakers.index');
  
 Auth::routes();
 
 Route::middleware('client')->group(function () {
+    // Create new comment
+  Route::post('/comment/create/{id}', 'App\Http\Controllers\CommentController@store')->name("comment.store");
 
-    
+  // Create new comment
+  Route::get('/comment/delete/{id}', 'App\Http\Controllers\CommentController@destroy')->name("comment.delete");
+  // cart
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
+//cart add
+Route::get('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
+//cart removeAll 
+Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
+//cart remove
+Route::get('/cart/remove/', 'App\Http\Controllers\CartController@remove')->name("cart.remove");
+// cart checkout
+Route::get('/cart/checkOut/', 'App\Http\Controllers\CartController@checkOut')->name("cart.checkOut");
 
 });
 
