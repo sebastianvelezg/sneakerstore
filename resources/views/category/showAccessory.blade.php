@@ -3,7 +3,7 @@
 
 <div class="container pt-5">
     <h1 class="text-center">{{ $viewData['category']->getName() }}</h1>
-        <h3 class="text-center my-5">New accessories</h3>
+        <h3 class="text-center my-5">{{__'New Accesorie'}}</h3>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -27,12 +27,12 @@
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">{{__'Previous'}}</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">{{__'Next'}}</span>
       </button>
     </div>
 

@@ -28,7 +28,7 @@
         <div class="modal-dialog">
           <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel{{ $comment->getId() }}">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel{{ $comment->getId() }}">{{__'Modal Tittle'}}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -39,9 +39,9 @@
 
                   <textarea class="form-control bg-dark text-light" placeholder="Leave a comment here" id="floatingTextarea"
                     name="comment"></textarea>
-                  <label for="floatingTextarea" class="text-light">Response</label>
+                  <label for="floatingTextarea" class="text-light">{{__'Response'}}</label>
                   @error('comment')
-                    <div class="alert alert-danger mt-2">The field must be full</div>
+                    <div class="alert alert-danger mt-2">T{{__'The field must be full'}}</div>
                   @enderror
 
                   <div class="input-group mt-3 visually-hidden">
@@ -50,12 +50,12 @@
                       aria-describedby="basic-addon2" value="{{ $comment->getId() }}">
                   </div>
 
-                  <button type="submit" class="btn btn-outline-light mt-2">Create</button>
+                  <button type="submit" class="btn btn-outline-light mt-2">{{__'Create'}}</button>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__'Close'}}</button>
             </div>
           </div>
         </div>

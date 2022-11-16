@@ -9,7 +9,7 @@
   @csrf
 
   <div class="mb-3">
-    <label for="" class="form-label">Type</label>
+    <label for="" class="form-label">{{__'Type'}}</label>
     <div class="col-md-6">
       <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type"
         value="{{ old('type') }}" autocomplete="type" autofocus>
@@ -23,7 +23,7 @@
 
 
   <div class="mb-3">
-    <label for="" class="form-label">Brand</label>
+    <label for="" class="form-label">{{__'Brand'}}</label>
     <div class="col-md-6">
       <input id="brand" type="brand" class="form-control @error('brand') is-invalid @enderror" name="brand"
         value="{{ old('brand') }}" autocomplete="brand">
@@ -36,7 +36,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Description</label>
+    <label for="" class="form-label">{{__'Description'}}</label>
     <div class="col-md-6">
       <input id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description"
         value="{{ old('description') }}" autocomplete="description">
@@ -49,7 +49,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Release Date</label>
+    <label for="" class="form-label">{{__'Release Date'}}</label>
     <div class="col-md-6">
       <input id="releasedate" type="releasedate" class="form-control @error('releasedate') is-invalid @enderror" name="releasedate"
         value="{{ old('releasedate') }}" autocomplete="releasedate">
@@ -62,7 +62,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Retail Price</label>
+    <label for="" class="form-label">{{__'Retail Price'}}</label>
     <div class="col-md-6">
       <input id="retailprice" type="retailprice" class="form-control @error('retailprice') is-invalid @enderror" name="retailprice"
         value="{{ old('retailprice') }}" autocomplete="retailprice">
@@ -75,7 +75,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Price</label>
+    <label for="" class="form-label">{{__'Prise'}}</label>
     <div class="col-md-6">
       <input id="price" type="price" class="form-control @error('price') is-invalid @enderror" name="price"
         value="{{ old('price') }}" autocomplete="price">
@@ -88,7 +88,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Image</label>
+    <label for="" class="form-label">{{__'Image'}}/label>
     <input id="image" name="image" type="file" class="" tabindex="3" />
     @error('image')
     <span class="invalid-feedback d-block" role="alert">
@@ -102,8 +102,8 @@
       value="{{ $viewData['category']->getId() }}" style="visibility: hidden; height: 0" />
   </div>
 
-  <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
-  <button type="submit" class="btn bg-dark text-white">Save</button>
+  <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">{{__'Cancel'}}</a>
+  <button type="submit" class="btn bg-dark text-white">{{__'Save'}}</button>
 </form>
 @stop
 

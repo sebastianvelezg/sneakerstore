@@ -8,7 +8,7 @@
   <form action="{{ route('admin.userUpdate', $viewData['user']->getId()) }}" method="post" enctype="multipart/form-data">
     @csrf @method('PUT')
     <div class="mb-3">
-      <label for="" class="form-label">Name</label>
+      <label for="" class="form-label">{{__'Name'}}</label>
       <div class="col-md-6">
         <input id="name" name="name" type="text" class="form-control" value="{{ $viewData['user']->getName() }}">
       </div>
@@ -19,7 +19,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Email</label>
+      <label for="" class="form-label">{{__'Email'}}</label>
       <div class="col-md-6">
         <input id="email" name="email" type="text" class="form-control" value="{{ $viewData['user']->getEmail() }}">
       </div>
@@ -30,7 +30,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Role</label>
+      <label for="" class="form-label">{{__'Role'}}</label>
       <div class="col-md-6">
         <input id="rol" name="rol" type="text" class="form-control" value="{{ $viewData['user']->getRol() }}">
       </div>
@@ -41,7 +41,7 @@
       @enderror
     </div>
 
-    <a href="{{ route('admin.user') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
+    <a href="{{ route('admin.user') }}" class="btn btn-secondary" tabindex="5">{{__'Cancel'}}</a>
     <button type="submit" class="btn btn-primary" tabindex="4">Save</button>
   </form>
   @stop @section('css')

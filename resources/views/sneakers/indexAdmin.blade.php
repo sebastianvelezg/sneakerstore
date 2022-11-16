@@ -13,11 +13,11 @@
               <h3 class="card-title">{{ $category->getName() }}</h3>
               <div class="card-tools">
                 <a href="{{ route('admin.sneakerCreate', ['id'=> $category->getId()]) }}" class="btn btn-dark mb-3">
-                Create
+                {{__'Create'}}
                   <i class="fas fa-plus"></i>
                 </a>
                 <a href="{{ route('admin.sneakersCategory', $category->getId()) }}" class="btn btn-dark mb-3">
-                See All
+                {{__'See All'}}
                   <i class="fas fa-eye"></i>
                 </a>
               </div>

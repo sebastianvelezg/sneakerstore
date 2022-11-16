@@ -17,11 +17,11 @@
             <form class="" action="{{ route('admin.userDelete', $user->getId()) }}">
               @csrf @method('GET')
               <a href="{{ route('admin.userEdit', $user->getId()) }}" class="btn btn-dark mb-3">
-              Edit
+              {{__'Edit'}}
                 <i class="fas fa-pen"></i>
               </a>
               <button class="btn btn-dark mb-3" type="submit">
-              Delete
+              {{__'Delete'}}
                 <i class="fas fa-trash"></i>
               </button>
             </form>

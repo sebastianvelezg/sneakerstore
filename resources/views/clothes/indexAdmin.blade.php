@@ -34,8 +34,7 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
-@stop
-
+@stop 
 {{-- @foreach($sneakers as $sneaker)
   <div class="card" style="width: 40%;">
     <div class="card-header">
@@ -44,11 +43,11 @@
       <form class="card-tools" action="{{ route('admin.sneakerDelete', $sneaker->getId()) }}">
         @csrf @method('GET')
         <a href="{{ route('admin.sneakerEdit', $sneaker->getId()) }}" class="btn btn-dark mb-3">
-        Edit
+        {{__'Edit'}}
           <i class="fas fa-pen"></i>
         </a>
         <button class="btn btn-dark mb-3" type="submit">
-        Delete
+        {{__'Delete'}}
           <i class="fas fa-trash"></i>
         </button>
       </form>

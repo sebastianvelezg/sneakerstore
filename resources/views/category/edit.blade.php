@@ -9,7 +9,7 @@
     >
     @csrf @method('PUT')
     <div class="mb-3">
-      <label for="" class="form-label">  Name</label>
+      <label for="" class="form-label">{{__('Name')}}</label>
       <div class="col-md-6">
         <input id="name" name="name" type="text" class="form-control" value="{{ $viewData['category']->getName() }}" />
       </div>
@@ -20,7 +20,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">  Description</label>
+      <label for="" class="form-label">{{__'Description'}}</label>
       <div class="col-md-6">
         <input id="description" name="description" type="text" class="form-control"
           value="{{ $viewData['category']->getDescription() }}" />
@@ -32,7 +32,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">  type</label>
+      <label for="" class="form-label">  {{__'type'}}</label>
       <div class="col-md-6">
         <input id="type" name="type" type="text" class="form-control" value="{{ $viewData['category']->getType() }}" />
       </div>
@@ -43,15 +43,15 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">  Image</label>
+      <label for="" class="form-label">{{__'Image'}}</label>
       <input id="image" name="image" type="file" />
     </div>
     <div class="d-flex justify-content-start pt-2 pb-4 pl-5">
       <img src="./../../../image/category/{{ $viewData['category']->getImage() }}" alt="" style="width: 30rem" />
     </div>
 
-    <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
-    <button type="submit" class="btn btn-primary" tabindex="4">Save</button>
+    <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">{{__'Cancel'}}</a>
+    <button type="submit" class="btn btn-primary" tabindex="4">{{__'Save'}}</button>
   </form>
   @stop @section('css')
   <link rel="stylesheet" href="/css/admin_custom.css" />

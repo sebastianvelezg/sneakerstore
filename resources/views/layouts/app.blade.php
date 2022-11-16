@@ -12,31 +12,31 @@
         <!-- nav -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-third py-4">
           <div class="container">
-              <a class="navbar-brand" href="{{ route('home.index') }}">Sneakers store</a>
+              <a class="navbar-brand" href="{{ route('home.index') }}">{{__'Sneakers store'}}</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav ms-auto">
-                      <a class="btn btn-outline-success mx-2" href="{{ route('home.index')}}">Home</a>
-                      <a class="btn btn-outline-success mx-2" href="{{ route('category.index')}}">Categories</a>
-                      <a class="btn btn-outline-success mx-2" href="{{ route('home.about')}}">About</a>
-                      <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">Support</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.index')}}">{{__'Home'}}</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('category.index')}}">{{__'Categories'}}</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.about')}}">{{__'About'}}</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">{{__'Support'}}</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                       @guest
-                          <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">Login</a>
-                          <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">Register</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">{{__'Login'}}</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">{{__'Register'}}</a>
                       @else
                       @if (Auth::user()->getRol() == 'admin')
                           <li class="nav-item d-flex">
-                              <a class="btn btn-outline-success mx-2" href="{{ route('admin.index', Auth::id()) }}">Admin Panel</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('admin.index', Auth::id()) }}">{{__'Admin Panel'}}</a>
                           </li>
                       @endif
                           <form id="logout" action="{{ route('logout') }}" method="POST">
                               <a role="button" class="btn btn-outline-success mx-2"
-                              onclick="document.getElementById('logout').submit();">Logout</a>
-                              <a class="btn btn-outline-success mx-2" href="{{ route('cart.index')}}">Cart</a>
+                              onclick="document.getElementById('logout').submit();">{{__'Logout'}}</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('cart.index')}}">{{__'Cart'}}</a>
                               @csrf
                           </form>
                       @endguest

@@ -9,7 +9,7 @@
   >
   @csrf @method('PUT')
   <div class="mb-3">
-    <label for="" class="form-label">Type: </label>
+    <label for="" class="form-label">{{__'Type:'}} </label>
     <input id="type" name="type" type="text" class="form-control" value="{{ $viewData['clothe']->getType() }}" />
     @error('type')
       <span class="invalid-feedback d-block" role="alert">
@@ -18,7 +18,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Brand: </label>
+    <label for="" class="form-label">{{__'Brand:'}}</label>
     <input id="brand" name="brand" type="text" class="form-control"
       value="{{ $viewData['clothe']->getBrand() }}" />
     @error('brand')
@@ -28,7 +28,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Description: </label>
+    <label for="" class="form-label">{{__'Description:'}}</label>
     <input id="description" name="description" type="text" class="form-control"
       value="{{ $viewData['clothe']->getDescription() }}" />
     @error('description')
@@ -38,7 +38,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Id Category: </label>
+    <label for="" class="form-label">{{__'Id_Category:'}} </label>
     <select class="form-control" name="idCategory">
       @foreach ($viewData['categories'] as $category)
         <option value="{{ $category->getId() }}"
@@ -49,7 +49,7 @@
     </select>
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Realease Date: </label>
+    <label for="" class="form-label">{{__'Release Date:'}} </label>
     <input id="releasedate" name="releasedate" type="text" class="form-control"
       value="{{ $viewData['clothe']->getReleasedate() }}" />
     @error('releasedate')
@@ -59,7 +59,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Reatil Price: </label>
+    <label for="" class="form-label">{{__'Retail price:'}} </label>
     <input id="retailprice" name="retailprice" type="number" class="form-control"
       value="{{ $viewData['clothe']->getRetailprice() }}" />
     @error('retailprice')
@@ -69,7 +69,7 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Price: </label>
+    <label for="" class="form-label">{{__'Price:'}} </label>
     <input id="price" name="price" type="number" class="form-control"
       value="{{ $viewData['clothe']->getPrice() }}" />
     @error('price')
@@ -80,7 +80,7 @@
   </div>
   
   <div class="mb-3">
-    <label for="" class="form-label">Image: </label>
+    <label for="" class="form-label">{{__'Image:'}} </label>
     <input id="image" name="image" type="file" />
   </div>
   <div class="d-flex justify-content-start pt-2 pb-4 pl-5">
