@@ -7,7 +7,7 @@
     @method('POST')
     @csrf
     <div class="mb-3">
-      <label for="" class="form-label">Name</label>
+      <label for="" class="form-label">{{__'Name'}}</label>
       <div class="col-md-6">
         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
           value="{{ old('name') }}" autocomplete="name" autofocus>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Email Address</label>
+      <label for="" class="form-label">{{__'Email Address'}}</label>
       <div class="col-md-6">
         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
           value="{{ old('email') }}" autocomplete="email">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Password</label>
+      <label for="" class="form-label">{{__'Password'}}</label>
       <div class="col-md-6">
         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
           autocomplete="new-password">
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Confirm Password</label>
+      <label for="" class="form-label">{{__'Confirm Password'}}</label>
       <div class="col-md-6">
         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
           autocomplete="new-password">
@@ -55,7 +55,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Role</label>
+      <label for="" class="form-label">{{__'Role'}}</label>
       <div class="col-md-6">
         <input id="rol" name="rol" type="text" class="form-control" tabindex="2" />
       </div>
@@ -65,7 +65,7 @@
         </span>
       @enderror
     </div>
-    <a href="{{ route('admin.user') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
+    <a href="{{ route('admin.user') }}" class="btn btn-secondary" tabindex="5">{{__'Cancel'}}</a>
     <button type="submit" class="btn bg-dark text-white">{{ __('Register') }}</button>
   </form>
 @stop

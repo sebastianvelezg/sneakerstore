@@ -10,14 +10,14 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-tag"></i>
-            <span class="font-weight-bold">Category: </span>
+            <span class="font-weight-bold">{{__'Category'}} </span>
             {{ $viewData['category']->getName() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-user"></i>
-            <span class="font-weight-bold">type: </span>
+            <span class="font-weight-bold">{{__'Type:'}} </span>
             {{ $viewData['clothe']->getType() }}
           </p>
         </div>
@@ -27,7 +27,7 @@
         <div class="col-md-12">
           <p>
             <i class="fas fa-align-justify"></i>
-            <span class="font-weight-bold">Brand: </span>
+            <span class="font-weight-bold">{{__'Brand:'}} </span>
             {{ $viewData['clothe']->getBrand() }}
           </p>
         </div>
@@ -36,21 +36,21 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-plus"></i>
-            <span class="font-weight-bold">Release Date: </span>
+            <span class="font-weight-bold">{{__'Release Date:'}} </span>
             {{ $viewData['clothe']->getReleasedate() }}
           </p>
         </div>
         <div class="col-md-6">
             <p>
               <i class="fas fa-dollar-sign"></i>
-              <span class="font-weight-bold">Retail Price: </span>
+              <span class="font-weight-bold">{{__'Retail Price:'}} </span>
               {{ $viewData['clothe']->getRetailprice() }}
             </p>
           </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-dollar-sign"></i>
-            <span class="font-weight-bold">Price: </span>
+            <span class="font-weight-bold">{{__'Price:'}}</span>
             {{ $viewData['clothe']->getPrice() }}
           </p>
         </div>
@@ -59,7 +59,7 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-abacus"></i>
-            <span class="font-weight-bold">Description: </span>
+            <span class="font-weight-bold">{{__'Description:'}} </span>
             {{ $viewData['clothe']->getDescription() }}
           </p>
         </div>
@@ -68,14 +68,14 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar"></i>
-            <span class="font-weight-bold">Date Updated: </span>
+            <span class="font-weight-bold">{{__'Date Updated:'}} </span>
             {{ $viewData['clothe']->getUpdateAt() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-check"></i>
-            <span class="font-weight-bold">Date Created: </span>
+            <span class="font-weight-bold">{{__'Date Created:'}}</span>
             {{ $viewData['clothe']->getCreateAt() }}
           </p>
         </div>
@@ -98,7 +98,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addImageModalLabel">Add Image</h5>
+          <h5 class="modal-title" id="addImageModalLabel">{{__'Add Image:'}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -109,20 +109,20 @@
             @csrf
             @method('POST')
             <div class="form-group">
-              <label for="exampleInputPassword1">Images: </label>
+              <label for="exampleInputPassword1">{{__'Images:'}} </label>
               <input name="files[]" type="file" class="" id="exampleInputPassword1" multiple="multiple">
             </div>
             <button type="submit" class="btn btn-outline-light">Add Image</button>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__'Close:'}}</button>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 class="text-center my-5">All Images</h3>
+  <h3 class="text-center my-5">{{__'All Images:'}}</h3>
 
   <div class="d-flex flex-wrap">
 

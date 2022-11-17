@@ -10,14 +10,14 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-user"></i>
-            <span class="font-weight-bold">name: </span>
+            <span class="font-weight-bold">{{__'Name:'}} </span>
             {{ $viewData['sneaker']->getName() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-tag"></i>
-            <span class="font-weight-bold">Category: </span>
+            <span class="font-weight-bold">{{__'Category:'}} </span>
             {{ $viewData['category']->getName() }}
           </p>
         </div>
@@ -26,7 +26,7 @@
         <div class="col-md-12">
           <p>
             <i class="fas fa-align-justify"></i>
-            <span class="font-weight-bold">Brand: </span>
+            <span class="font-weight-bold">{{__'Brand:'}} </span>
             {{ $viewData['sneaker']->getBrand() }}
           </p>
         </div>
@@ -35,21 +35,21 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-plus"></i>
-            <span class="font-weight-bold">Release Date: </span>
+            <span class="font-weight-bold">{{__'Release Date:'}} </span>
             {{ $viewData['sneaker']->getReleasedate() }}
           </p>
         </div>
         <div class="col-md-6">
             <p>
               <i class="fas fa-dollar-sign"></i>
-              <span class="font-weight-bold">Retail Price: </span>
+              <span class="font-weight-bold">{{__'Retail Price:'}} </span>
               {{ $viewData['sneaker']->getRetailprice() }}
             </p>
           </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-dollar-sign"></i>
-            <span class="font-weight-bold">Price: </span>
+            <span class="font-weight-bold">{{__'Price:'}} </span>
             {{ $viewData['sneaker']->getPrice() }}
           </p>
         </div>
@@ -58,14 +58,14 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-id-badge"></i>
-            <span class="font-weight-bold">Colorway: </span>
+            <span class="font-weight-bold">{{__'Colorway:'}} </span>
             {{ $viewData['sneaker']->getColorway() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-abacus"></i>
-            <span class="font-weight-bold">Description: </span>
+            <span class="font-weight-bold">{{__'Description:'}} </span>
             {{ $viewData['sneaker']->getDescription() }}
           </p>
         </div>
@@ -74,14 +74,14 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar"></i>
-            <span class="font-weight-bold">Date Updated: </span>
+            <span class="font-weight-bold">{{__Date Updated:'}} </span>
             {{ $viewData['sneaker']->getUpdateAt() }}
           </p>
         </div>
         <div class="col-md-6">
           <p>
             <i class="fas fa-calendar-check"></i>
-            <span class="font-weight-bold">Date Created: </span>
+            <span class="font-weight-bold">{{__'Date Created:'}} </span>
             {{ $viewData['sneaker']->getCreateAt() }}
           </p>
         </div>
@@ -104,7 +104,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addImageModalLabel">Add Image</h5>
+          <h5 class="modal-title" id="addImageModalLabel">{{__'Add Image'}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -118,17 +118,17 @@
               <label for="exampleInputPassword1">Images: </label>
               <input name="files[]" type="file" class="" id="exampleInputPassword1" multiple="multiple">
             </div>
-            <button type="submit" class="btn btn-outline-light">Add Image</button>
+            <button type="submit" class="btn btn-outline-light">{{__'Add Image'}}</button>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__'Close'}}</button>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 class="text-center my-5">All Images</h3>
+  <h3 class="text-center my-5">{{__'All Images'}}</h3>
 
   <div class="d-flex flex-wrap">
 
@@ -145,7 +145,7 @@
           <div class="card-body">
             <a href="{{ route('admin.sneakerDeleteImage', $viewData['sneaker']->getId() . ' $- ' . $image->getFilename()) }}"
               class="btn btn-outline-danger stretched-link">
-              Delete
+              {{__'Delete'}}
               <i class="fas fa-trash"></i>
             </a>
           </div>

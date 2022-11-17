@@ -17,15 +17,15 @@
         <form class="card-tools" action="{{ route('admin.sneakerDelete', $sneaker->getId()) }}">
           @csrf @method('GET')
           <a href="{{ route('admin.sneakerEdit', $sneaker->getId()) }}" class="btn btn-dark mb-3">
-            Edit
+            {{__'Edit'}}
             <i class="fas fa-pen"></i>
           </a>
           <button class="btn btn-dark mb-3" type="submit">
-          Delete
+          {{__'Delete'}}
             <i class="fas fa-trash"></i>
           </button>
           <a href="{{ route('admin.sneakerShow', $sneaker->getId()) }}" class="btn btn-dark mb-3">
-          More
+          {{__'More'}}
             <i class="fas fa-angle-double-right"></i>
           </a>
         </form>
