@@ -9,8 +9,8 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="col-md-5">
         <h1>{{__('Sneaker Store')}}</h1>
-        <h2>Why?</h2>
-        <p class="fs-3">{{__('The Best Store')}}</p>
+        <h2>{{ __('Why?') }}</h2>
+        <p class="fs-3">{{__('The best store')}}</p>
 
         <h3 class="text-center">{{__('You can buy a Sneaker in')}}</h3>
         <div class="row">
@@ -23,7 +23,7 @@
             <h3>{{__('Search')}}</h3>
           </div>
           @guest
-            <a href="{{ route('register') }}" class="btn btn-outline-light mt-5">Get Started!</a>
+            <a href="{{ route('register') }}" class="btn btn-outline-light mt-5">{{ __('Get started!')}}</a>
           @else
             <a href="{{ route('category.index') }}" class="btn btn-outline-light mt-5">See all categories</a>
           @endguest
@@ -58,11 +58,11 @@
     @endfor
   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">{{__'Previous'}}</span>
+    <span class="visually-hidden">{{__('Previous')}}</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">{{__'Next'}}</span>
+    <span class="visually-hidden">{{__('Next')}}</span>
   </button>
 </div>
 
@@ -72,7 +72,7 @@
     <div class="col">
      <div class="p-3 mt-3 bg-card-sneaker">
       <div class="list-group">
-        <h2 class="text-center">{{__'Latest Sneakers'}}</h2>
+        <h2 class="text-center">{{__('Latest Sneakers')}}</h2>
         @foreach ($viewData['latestSneakers'] as $sneaker)
           <div class="col-md-12 bg-third text-light d-flex p-1">
             <a href="{{ route('sneakers.index', $sneaker->getId()) }}"
@@ -102,7 +102,7 @@
     <div class="col">
       <div class="p-3 mt-3 bg-card-sneaker">
         <div class="list-group">
-          <h2 class="text-center">{{__'Cheapest Sneakers'}}</h2>
+          <h2 class="text-center">{{__('Cheapest Sneakers')}}</h2>
           @foreach ($viewData['cheapestSneakers'] as $sneaker)
             <div class="col-md-12 bg-third text-light d-flex p-1">
               <a href="{{ route('sneakers.index', $sneaker->getId()) }}"

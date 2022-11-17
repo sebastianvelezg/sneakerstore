@@ -40,7 +40,7 @@
             </div>
 
             <div class="d-flex justify-content-center align-items-center">
-            <a href="{{ route('register') }}" class="btn btn-outline-dark">Get Started<i
+            <a href="{{ route('register') }}" class="btn btn-outline-dark">{{ __('Get Started')}}<i
                 class="fa-solid fa-right-long"></i></a>
             </div>
         </div>
@@ -56,7 +56,7 @@
       <div class="col-md-8 row my-5">
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-people-group fs-1"></i>
-          <h3>{{__'100% Original'}}</h3>
+          <h3>{{__('100% Original')}}</h3>
           <p class="">{{__('The products that we sell have the stamp of quality and verification.')}}</p><br>
         </div>
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
@@ -74,7 +74,7 @@
       <div class="col-md-8 row my-5">
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
           <i class="fa-solid fa-ranking-star fs-1"></i>
-          <h3>{{__'The best attention'}}</h3>
+          <h3>{{__('The best attention')}}</h3>
           <p class="">{{__('We are always avaliable to answer any question that our clients have, with the best attitude.')}}</p>
         </div>
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">

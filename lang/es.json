@@ -1,18 +1,20 @@
 {
     "Home":"Inicio",
     "A laravel SNEAKERS App":"Una aplicación laravel SNEAKERS",
+    "Why?":"¿Por qué?",
     "Sneakers Store Why ?":"Tienda de Sneakers ¿Por qué?",
     "The best store":"La mejor tienda",
-    "You can buy Sneakers in" : "Puedes comprar Sneakers en",
+    "You can buy a Sneaker in" : "Puedes comprar un Sneaker en",
     "Buy":"Comprar",
     "Search":"Buscar",
-    "Get started": "Empezar",
-    "Lastest Sneakers":"Los últimos Sneakers",
+    "Get started!": "Empezemos!",
+    "Get Started": "Empezemos",
+    "Latest Sneakers":"Los últimos Sneakers",
     "Cheapest Sneakers":"Sneakers más baratos",
     "Products":"Productos",
     "Trending products":"Productos en tendencia",
-    "Lastest Shirts":"Ultimas camisetas",
-    "Randonm Products":"Productos al azar",
+    "Latest Shirts":"Ultimas camisetas",
+    "Random Products":"Productos al azar",
     "Description":"Descripción",
     "Category":"Categoria",
     "How?":"Como?",
@@ -54,5 +56,6 @@
     "Register":"Registrarse",
     "Name":"Nombre", 
     "Confirm Password":"Confirmar contraseña",
-    "Sneakers store":"Tienda de Sneakers"
+    "Sneakers store":"Tienda de Sneakers",
+    "Top buyers": "Mejores compradores"
 }

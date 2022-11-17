@@ -5,8 +5,8 @@
 <div class="d-flex justify-content-around align-items-center" style="height: calc(45vh - 3rem);">
     <div class="container d-flex justify-content-around align-items-center">
       <div class="col-md-5">
-        <h1>Category</h1>
-        <h2>How?</h2>
+        <h1>{{  __('Category')}}</h1>
+        <h2>{{ __('How?')}}</h2>
         <p class="fs-3">{{__('In SneakerStore all products are divided in categories so you can choose and search easily any of you rhypebeast needs.')}}</p>
 
         <div class="row">

@@ -10,7 +10,7 @@
         <div class="col-md-6">
           <p>
             <i class="fas fa-tag"></i>
-            <span class="font-weight-bold">Category: </span>
+            <span class="font-weight-bold">{{ __('Category')}}: </span>
             {{ $viewData['category']->getName() }}
           </p>
         </div>
