@@ -152,18 +152,14 @@
 
   {{-- categories products --}}
   <div class="row mt-5 mb-5">
-    <h5 class="card-title">{{__'Trending Products'}}</h5>
+    <h5 class="card-title">{{__('Random Products')}}</h5>
     <i class="fa fa-home"></i>
-    @foreach ($viewData['randomProducts'] as $sneaker)
-      <div class="col-sm-3" href="{{ route('sneakers.index', $sneaker->getId()) }}">
-        <div class="card" style="width: 18rem;">
-          <img src="{{ URL::to('/') }}/image/sneakers/{{ $sneaker->getId() }}/{{ $sneaker->getImage() }}"
-            class="card-img-top" alt="..."/>
+    @foreach ($viewData['randomProducts'] as $abarrote)
+      <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
           <div class="card-body">
-            <h5 class="card-title">{{ $sneaker->getName() }}{{ $sneaker->getColorway() }}</h5>
-            <p class="card-text">{{ $sneaker->getDescription() }}</p>
-            <p class="card-text">{{ $sneaker->getPrice() }}</p>
-            <a href="#" class="btn btn-primary">See More!</a>
+            <h5 class="card-title">{{ $abarrote['name'] }}</h5>
+            <p class="card-text">{{ $abarrote['price'] }}</p>
           </div>
         </div>
       </div>
@@ -173,16 +169,12 @@
 {{-- Latest Clothes --}}
 
 <div class="row mt-5 mb-5">
-  <h5 class="card-title">{{__'Latests Shirts'}}</h5>
-  @foreach ($viewData['latestClothes'] as $clothe)
+  <h5 class="card-title">{{__('Top buyers')}}</h5>
+  @foreach ($viewData['Bestusers'] as $bestuser)
     <div class="col-sm-4">
       <div class="card" style="width: 25rem;">
-        <img src="{{ URL::to('/') }}/image/clothes/{{ $clothe->getId() }}/{{ $clothe->getImage() }}"
-        class="card-img-top" alt="..."  />
         <div class="card-body">
-          <h5 class="card-title">{{ $clothe->getType() }}</h5>
-          <p class="card-text">{{ $clothe->getDescription() }}</p>
-          <a href="{{ route('clothes.index', $clothe->getId()) }}" class="btn btn-primary">See More!</a>
+          <h5 class="card-title">{{ $bestuser['name'] }}</h5>
         </div>
       </div>
     </div>
@@ -191,7 +183,7 @@
 
   {{-- categories products --}}
   <div class="row mt-5 mb-5">
-    <h5 class="card-title">{{__'Random Products'}}</h5>
+    <h5 class="card-title">{{__('Trending products')}}</h5>
     <i class="fa fa-home"></i>
     @foreach ($viewData['accessories'] as $accessory)
       <div class="col-sm-3" href="{{ route('accessories.index', $accessory->getId()) }}">
