@@ -21,11 +21,11 @@
             <i class="fas fa-pen"></i>
           </a>
           <button class="btn btn-dark mb-3" type="submit">
-          {{__'Delete'}}
+          Delete
             <i class="fas fa-trash"></i>
           </button>
           <a href="{{ route('admin.clotheShow', $clothe->getId()) }}" class="btn btn-dark mb-3">
-          {{__'More'}}
+          More
             <i class="fas fa-angle-double-right"></i>
           </a>
         </form>

@@ -104,7 +104,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addImageModalLabel">Add Image</h5>
+          <h5 class="modal-title" id="addImageModalLabel">{{__('Add Image')}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -115,7 +115,7 @@
             @csrf
             @method('POST')
             <div class="form-group">
-              <label for="exampleInputPassword1">Images: </label>
+              <label for="exampleInputPassword1">{{__('Images:')}} </label>
               <input name="files[]" type="file" class="" id="exampleInputPassword1" multiple="multiple">
             </div>
             <button type="submit" class="btn btn-outline-light">Add Image</button>

@@ -18,11 +18,11 @@
             <form class="card-tools" action="{{ route('admin.categoryDelete', $category->getId()) }}">
               @csrf @method('GET')
               <a href="{{ route('admin.categoryEdit', $category->getId()) }}" class="btn btn-dark mb-3">
-              {{__'Edit'}}
+              Edit
                 <i class="fas fa-pen"></i>
               </a>
               <button class="btn btn-dark mb-3" type="submit">
-              {{__'Delete'}}
+              Delete
                 <i class="fas fa-trash"></i>
               </button>
             </form>

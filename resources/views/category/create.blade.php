@@ -7,7 +7,7 @@
     class="d-flex flex-column justify-content-center align-items-center">
     @method('POST') @csrf
     <div class="mb-3">
-      <label for="" class="form-label">{{__'Name:'}}</label>
+      <label for="" class="form-label">{{__('Name:')}}</label>
 
       <input id="name" name="name" type="text" class="form-control" tabindex="1" />
       @error('name')
@@ -17,7 +17,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">{{__'Description:'}}</label>
+      <label for="" class="form-label">{{__('Description:')}}</label>
 
       <input id="description" name="description" type="text" class="form-control" tabindex="2" />
 
@@ -28,7 +28,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">{{__'Type'}}</label>
+      <label for="" class="form-label">{{__('Type')}}</label>
 
       <input id="type" name="type" type="text" class="form-control" tabindex="3" />
       @error('type')
@@ -38,7 +38,7 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">{{__'Image'}}</label>
+      <label for="" class="form-label">{{__('Image')}}</label>
 
       <input id="image" name="image" type="file" class="" tabindex="1" />
 
@@ -49,8 +49,8 @@
       @enderror
     </div>
     <div>
-      <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">{{__'Cancel'}}</a>
-      <button type="submit" class="btn btn-primary" tabindex="4">{{__'Save'}}</button>
+      <a href="{{ route('admin.category') }}" class="btn btn-secondary" tabindex="5">Cancel</a>
+      <button type="submit" class="btn btn-primary" tabindex="4">Save</button>
     </div>
   </form>
   @stop @section('css')

@@ -13,43 +13,43 @@
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-user"></i>
-                <span class="font-weight-bold">{{__'Name:'}} </span>
+                <span class="font-weight-bold">Name: </span>
                 {{ $viewData['sneaker']->getName() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-tag"></i>
-                <span class="font-weight-bold">{{__'Brand:'}} </span>
+                <span class="font-weight-bold">Brand: </span>
                 {{ $viewData['sneaker']->getBrand() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-dollar-sign"></i>
-                <span class="font-weight-bold">{{__'Colorway:'}} </span>
+                <span class="font-weight-bold">Colorway:</span>
                 {{ $viewData['sneaker']->getColorway() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-id-badge"></i>
-                <span class="font-weight-bold">{{__'Release Date:'}} </span>
+                <span class="font-weight-bold">Release Date:</span>
                 {{ $viewData['sneaker']->getReleasedate() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-abacus"></i>
-                <span class="font-weight-bold">{{__'Retail Price:'}} </span>
+                <span class="font-weight-bold">Retail Price: </span>
                 {{ $viewData['sneaker']->getRetailprice() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-calendar-plus"></i>
-                <span class="font-weight-bold">{{__'Price:'}} </span>
+                <span class="font-weight-bold">Price: </span>
                 {{ $viewData['sneaker']->getprice() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-calendar"></i>
-                <span class="font-weight-bold">{{__'Description:'}} </span>
+                <span class="font-weight-bold">Description:</span>
                 {{ $viewData['sneaker']->getDescription() }}
             </li>
           </ul>
@@ -92,11 +92,11 @@
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{__'Previous'}}</span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{__'Next'}}</span>
+      <span class="visually-hidden">Next</span>
     </button>
   </div>
   <div class="bg-dark text-light py-5">
@@ -115,11 +115,11 @@
         <div class="form-floating">
           <textarea class="form-control bg-dark text-light" placeholder="Leave a comment here" id="floatingTextarea"
             name="comment"></textarea>
-          <label for="floatingTextarea">{{__'CreateNew'}}</label>
+          <label for="floatingTextarea">{{__('CreateNew')}}</label>
           @error('comment')
-            <div class="alert alert-danger mt-2">{{__'FieldMustBeFull'}}</div>
+            <div class="alert alert-danger mt-2">{{__('FieldMustBeFull')}}</div>
           @enderror
-          <button type="submit" class="btn btn-outline-light mt-2">{{__'Create'}}</button>
+          <button type="submit" class="btn btn-outline-light mt-2">Create</button>
         </div>
       </form>
 

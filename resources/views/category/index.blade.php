@@ -7,20 +7,20 @@
       <div class="col-md-5">
         <h1>Category</h1>
         <h2>How?</h2>
-        <p class="fs-3">{{__'In SneakerStore all products are divided in categories so you can choose and search easily any of you rhypebeast needs.'}}</p>
+        <p class="fs-3">{{__('In SneakerStore all products are divided in categories so you can choose and search easily any of you rhypebeast needs.')}}</p>
 
         <div class="row">
           <div class="col-md-4 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-magnifying-glass fs-5 mb-1 me-2"></i>
-            <h3>{{__'Search'}}</h3>
+            <h3>{{__('Search')}}</h3>
           </div>
           <div class="col-md-4 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-arrow-pointer fs-5 mb-1 me-2"></i>
-            <h3>{{__'Enter'}}</h3>
+            <h3>{{__('Enter')}}</h3>
           </div>
           <div class="col-md-4 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-cart-shopping fs-5 mb-1 me-2"></i>
-            <h3>{{__'Buy'}}</h3>
+            <h3>{{__('Buy')}}</h3>
           </div>
         </div>
 

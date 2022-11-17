@@ -31,18 +31,18 @@
                       <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">{{__('Support')}}</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                       @guest
-                          <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">{{__'Login'}}</a>
-                          <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">{{__'Register'}}</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('login') }}">{{__('Login')}}</a>
+                          <a class="btn btn-outline-success mx-2" href="{{ route('register') }}">{{__('Register')}}</a>
                       @else
                       @if (Auth::user()->getRol() == 'admin')
                           <li class="nav-item d-flex">
-                              <a class="btn btn-outline-success mx-2" href="{{ route('admin.index', Auth::id()) }}">{{__'Admin Panel'}}</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('admin.index', Auth::id()) }}">{{__('Admin Panel')}}</a>
                           </li>
                       @endif
                           <form id="logout" action="{{ route('logout') }}" method="POST">
                               <a role="button" class="btn btn-outline-success mx-2"
-                              onclick="document.getElementById('logout').submit();">{{__'Logout'}}</a>
-                              <a class="btn btn-outline-success mx-2" href="{{ route('cart.index')}}">{{__'Cart'}}</a>
+                              onclick="document.getElementById('logout').submit();">Logout</a>
+                              <a class="btn btn-outline-success mx-2" href="{{ route('cart.index')}}">Cart</a>
                               @csrf
                           </form>
                       @endguest

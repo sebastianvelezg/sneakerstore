@@ -19,24 +19,24 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav ms-auto">
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.index')}}">Home</a>
-                      <a class="btn btn-outline-light mx-2" href="{{ route('category.index')}}">Categories</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.index')}}">{{__('Home')}}</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('category.index')}}">{{__('Categories')}}</a>
 
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">Sneakers</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">{{__('Sneakers')}}</a>
 
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">Clothing</a>
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">Accessories</a>
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">About</a>
-                      <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">Support</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">{{__('Clothing')}}</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">{{__('Accessories')}}</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.about')}}">{{__('About')}}</a>
+                      <a class="btn btn-outline-light mx-2" href="{{ route('home.support')}}">{{__('Support')}}</a>
                       <div class="vr bg-white mx-2 d-none d-lg-block"></div>
 
                       @guest
-                          <a class="btn btn-outline-light mx-2" href="{{ route('login') }}">Login</a>
-                          <a class="btn btn-outline-light mx-2" href="{{ route('register') }}">Register</a>
+                          <a class="btn btn-outline-light mx-2" href="{{ route('login') }}">{{__('Login')}}</a>
+                          <a class="btn btn-outline-light mx-2" href="{{ route('register') }}">{{__('Register')}}</a>
                       @else
                       @if (Auth::user()->getRol() == 'admin')
                           <li class="nav-item d-flex">
-                              <a class="btn btn-outline-light mx-2" href="{{ route('admin.index', Auth::id()) }}">Admin Panel</a>
+                              <a class="btn btn-outline-light mx-2" href="{{ route('admin.index', Auth::id()) }}">{{__('Admin Panel')}}</a>
                           </li>
                       @endif
                           <form id="logout" action="{{ route('logout') }}" method="POST">

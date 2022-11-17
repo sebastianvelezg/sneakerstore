@@ -11,38 +11,38 @@
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-user"></i>
-                <span class="font-weight-bold">{{__'Type:'}} </span>
+                <span class="font-weight-bold">Type: </span>
                 {{ $viewData['clothe']->getType() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-tag"></i>
-                <span class="font-weight-bold">{{__'Brand:'}} </span>
+                <span class="font-weight-bold">Brand: </span>
                 {{ $viewData['clothe']->getBrand() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-id-badge"></i>
-                <span class="font-weight-bold">{{__'Releade Date:'}} </span>
+                <span class="font-weight-bold">Releade Date: </span>
                 {{ $viewData['clothe']->getReleasedate() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-abacus"></i>
-                <span class="font-weight-bold">{{__'Retail price'}} </span>
+                <span class="font-weight-bold">Retail price:</span>
                 {{ $viewData['clothe']->getRetailprice() }}
               </p>
               <p class="w-100">
                 <i class="fas fa-calendar-plus"></i>
-                <span class="font-weight-bold">{{__'Price:'}} </span>
+                <span class="font-weight-bold">Price: </span>
                 {{ $viewData['clothe']->getprice() }}
               </p>
             </li>
             <li class="list-group-item d-flex bg-dark text-light">
               <p class="w-100">
                 <i class="fas fa-calendar"></i>
-                <span class="font-weight-bold">{{__'Description:'}} </span>
+                <span class="font-weight-bold">Description: </span>
                 {{ $viewData['clothe']->getDescription() }}
             </li>
           </ul>
@@ -85,11 +85,11 @@
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{__'Previous'}}</span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{__'Next'}}</span>
+      <span class="visually-hidden">Next</span>
     </button>
   </div>
   @endsection

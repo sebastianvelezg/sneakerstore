@@ -8,24 +8,24 @@
   <div class="bg-card text-light d-flex justify-content-center align-items-center mb-4" style="height: calc(40vh - 3rem);">
     <div class="container d-flex justify-content-center align-items-center">
       <div class="col-md-5">
-        <h1>{{__'Sneaker Store'}}</h1>
+        <h1>{{__('Sneaker Store')}}</h1>
         <h2>Why?</h2>
-        <p class="fs-3">{{__'The Best Store'}}</p>
+        <p class="fs-3">{{__('The Best Store')}}</p>
 
-        <h3 class="text-center">{{__'You can buy a Sneaker in'}}</h3>
+        <h3 class="text-center">{{__('You can buy a Sneaker in')}}</h3>
         <div class="row">
           <div class="col-md-4 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-money-bill fs-5 mb-1 me-2"></i>
-            <h3>{{__'Buy'}}</h3>
+            <h3>{{__('Buy')}}</h3>
           </div>
           <div class="col-md-4 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-magnifying-glass fs-5 mb-1 me-2"></i>
-            <h3>{{__'Search'}}</h3>
+            <h3>{{__('Search')}}</h3>
           </div>
           @guest
-            <a href="{{ route('register') }}" class="btn btn-outline-light mt-5">{{__'Get Started!'}}</a>
+            <a href="{{ route('register') }}" class="btn btn-outline-light mt-5">Get Started!</a>
           @else
-            <a href="{{ route('category.index') }}" class="btn btn-outline-light mt-5">{{__'See all categories'}}</a>
+            <a href="{{ route('category.index') }}" class="btn btn-outline-light mt-5">See all categories</a>
           @endguest
         </div>
 
@@ -134,7 +134,7 @@
 {{-- categories --}}
 
 <div class="row mt-5 mb-5">
-  <h5 class="card-title">{{__'Products'}}</h5>
+  <h5 class="card-title">{{__('Products')}}</h5>
   @foreach ($viewData['categories'] as $category)
     <div class="col-sm-4">
       <div class="card" style="width: 25rem;">
@@ -143,7 +143,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ $category->getName() }}</h5>
           <p class="card-text">{{ $category->getDescription() }}</p>
-          <a href="{{ route('category.show', $category->getId()) }}" class="btn btn-primary">{{__'See More'}}</a>
+          <a href="{{ route('category.show', $category->getId()) }}" class="btn btn-primary">See More</a>
         </div>
       </div>
     </div>
@@ -224,11 +224,11 @@
     @endfor
   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">{{__'Previous'}}</span>
+    <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">{{__'Next'}}</span>
+    <span class="visually-hidden">Next</span>
   </button>
 </div>
 
