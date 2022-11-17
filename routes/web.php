@@ -198,4 +198,12 @@ Route::get('/api/categories',function(){return CategoryResource::collection(Cate
 
 Route::get('/api/categories/{name}',function($name){return CategoryResource::collection(Category::where('name',$name)->get());});
 
+
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
+
+
 //////arregkar las rutas
