@@ -8,9 +8,15 @@
         <title>@yield('title', 'Sneakers store')</title>
 
     </head>
+    
     <body>
         <!-- nav -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-third py-4">
+            <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                    @include('partials/language_switcher')
+                </div>
+            </div>
           <div class="container">
               <a class="navbar-brand" href="{{ route('home.index') }}">Sneakers store</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -19,7 +25,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav ms-auto">
-                      <a class="btn btn-outline-success mx-2" href="{{ route('home.index')}}">Home</a>
+                      <a class="btn btn-outline-success mx-2" href="{{ route('home.index')}}">{{ __('Home') }}</a>
                       <a class="btn btn-outline-success mx-2" href="{{ route('category.index')}}">Categories</a>
                       <a class="btn btn-outline-success mx-2" href="{{ route('home.about')}}">About</a>
                       <a class="btn btn-outline-success mx-2" href="{{ route('home.support')}}">Support</a>

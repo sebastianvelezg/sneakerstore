@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\CategoryResource;
+use App\Models\Category;
+use Illuminate\Database\Eloquent\Collection;
 
 // Home page
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
@@ -190,5 +193,17 @@ Route::middleware('admin')->group(function () {
 
 
 });
+
+Route::get('/api/categories',function(){return CategoryResource::collection(Category::all());});
+
+Route::get('/api/categories/{name}',function($name){return CategoryResource::collection(Category::where('name',$name)->get());});
+
+
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
+
 
 //////arregkar las rutas
